@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Read and update content attributes accordingly  -->
+
+    <meta
+      name="description"
+      content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations."
+    />
+
+    <!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="Syed Mohsin's Portfolio">
+<meta itemprop="description" content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations.">
+
+<!-- Reference screenshot of updated site's header in place of content -->
+<meta itemprop="image" content="assets/images/sharing-card.png">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://ossportfolio.netlify.app">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Syed Mohsin's Portfolio">
+<meta property="og:description" content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations.">
+
+<!-- Reference screenshot of updated site's header in content -->
+<meta property="og:image" content="assets/images/sharing-card.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Syed Mohsin's Portfolio">
+<meta name="twitter:description" content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations.">
+
+<!-- Reference screenshot of updated site's header in content -->
+<meta name="twitter:image" content="assets/images/sharing-card.png">
+
+
+<!-- Update favicon href attribute with image of yourself -->
+    <link
+      rel="shortcut icon"
+      href=""
+      type="image/jpg"
+    />
+
+    <!-- Preloading fonts for better performance -->
+
+    <link
+      rel="preload"
+      href="assets/fonts/Mona-Sans.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link rel="stylesheet" href="style.css"  />
+    <script src="script.js" defer></script>
+
+    <!-- Your name here -->
+    <title>Darshit Vaghani's Portfolio</title>
+  </head>
+
+  <body>
+
+    <script>
+      const theme = localStorage.getItem("theme") || "dark";
+      document.body.classList.add(theme);
+    </script>
+
+    <header class="header">
+
+      <div class="menu-btn-container">
+        <div class="container">
+          <button type="button"  class="menu-btn">menu</button>
+        </div>
+      </div>
+
+      <nav class="nav hidden">
+        <ol class="nav-items">
+          <li class="nav-item"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#work">Projects</a></li>
+          <li class="nav-item"><a href="#blog">See Blog</a></li>
+          <li class="nav-item"><a href="#skills">My Skills</a></li>
+          <li class="nav-item">
+            <a href="#contact" data-focused="last-focused">Contact</a>
+          </li>
+        </ol>
+      </nav>
+
+      <div class="container">
+        <div class="header-textbox">
+          <!-- Replace with your name and job title -->
+          <h1 class="h1">
+            <span>Hi, I'm Darshit Vaghani</span>
+            <span>Electrical Engineer</span>
+          </h1>
+
+          <!-- Add a small introductory paragraph about yourself -->
+          <p class="header-text">
+            An IoT developer and electronics engineer passionate about designing innovative, efficient, and automation-driven hardware and software solutions. Skilled in microcontroller programming, circuit design, PCB designing, and developing IoT-integrated, user-friendly, and high-performance systems.
+          </p>
+
+          <div class="header-btns">
+            <a href="#contact" class="btn btn-cta">Hire me</a>
+            <a href="#work" class="btn btn-secondary">See my work</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      
+
+      <section class="work">
+        <div class="container">
+          <h2 class="h2" id="work">Projects</h2>
+          <div class="work-boxes">
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">Single-Phase Induction Motor Speed Controller and AC Voltage Regulator Using Phase Angle Control</h3>
+                <!-- Add small description of your project  -->
+                <p class="work-text">
+                  A precise voltage regulation system for single-phase induction motors, using phase angle control, Triac-based switching, and a zero-crossing detector.
+                </p>
+                <!-- Add technologies you used to build the project -->
+                <ol class="work-technologies">
+                  <li>Microcontroller (Arduino/ESP32)</li>
+                  <li>Zero Crossing detector</li>
+                  <li>MOC3021 Optocoupler</li>
+                  <li>Triac</li>
+                  <li>EasyEDA</li>
+                </ol>
+
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="https://GoogleDrive.com/devsyedmohsin" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                  <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="https://GoogleDrive.com/devsyedmohsin"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/google_drive.svg"
+                      alt="GoogleDrive"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+
+         <!-- Update img src and alt attribute  -->
+
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/speed-controll.jpg"
+                  alt="agency elevation"
+                />
+              </picture>
+            </div>
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">External Keyboard for Special Functions (Arduino & Python)</h3>
+                <!-- Add small description of your project  -->
+
+                <p class="work-text">An external keyboard interface designed for software developers and CAD users to automate key presses and control screen brightness using Arduino and Python.</p>
+                <ol class="work-technologies">  
+                  <li>Arduino,</li>
+                  <li>Python</li>
+                  <li>Serial Communication</li>
+                </ol>
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="#" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                     <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="http://GoogleDrive.com/devsyedmohsin"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/google_drive.svg"
+                      alt="GoogleDrive"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+         <!-- Update img src and alt attribute  -->
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/keyboard.jpg"
+                  alt="portfolio template"
+                />
+              </picture>
+            </div>
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">Class-E Chopper (Four Quadrant Motor Operation) for DC Motor Speed Control</h3>
+                <!-- Add small description of your project  -->
+                <p class="work-text">
+                  A portable DC motor controller with four-quadrant operation, offering speed and direction control with OLED display, high-rating MOSFETs, and an Atmega 328p microcontroller.
+                </p>
+                <ol class="work-technologies">
+                  <li>ATMEGA328p</li>
+                  <li>OLED Display</li>
+                  <li>MOSFETs</li>
+                  <li>EasyEDA</li>
+                </ol>
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="https://drive.google.com/drive/folders/1UzorHHDQvv4BANdi0UxarB-rRuQfeoZH?usp=drive_link" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/google_drive.svg"
+                      alt="GoogleDrive"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+         <!-- Update img src and alt attribute  -->
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/Class-E chopper.jpg"
+                  alt="contribute dev"
+                />
+              </picture>
+            </div>
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">Low-Cost Phase Changer for Voltage Stabilization</h3>
+                <!-- Add small description of your project  -->
+                <p class="work-text">
+                  A cost-effective phase changer for farmers to stabilize voltage supply and ensure consistent voltage output for single-phase equipment, preventing malfunction.
+                </p>
+                <ol class="work-technologies">
+                  <li>Op-Amp</li>
+                  <li>Phase Switching</li>
+                  <li>Relay</li>
+                  <li>EasyEDA</li>
+                </ol>
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="https://drive.google.com/drive/folders/11JN8ZHhA7RCwYGPUY2kv8kciikLtXKc2?usp=drive_link" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/google_drive.svg"
+                      alt="GoogleDrive"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+         <!-- Update img src and alt attribute  -->
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/phase-changer.jpg"
+                  alt="contribute dev"
+                />
+              </picture>
+            </div>
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">LPG Leakage Detection System with Servo-Controlled Gas Valve and Auto Cutoff</h3>
+                <!-- Add small description of your project  -->
+                <p class="work-text">
+                  A safety system for LPG leakage detection, including buzzer indication, servo-controlled gas valve, and automatic night cutoff for household and industrial use.
+                </p>
+                <ol class="work-technologies">
+                  <li>Arduino</li>
+                  <li>Servo Motor</li>
+                  <li>Gas Sensor(MQ-5)</li>
+                  <li>EasyEDA</li>
+                </ol>
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="#" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/google_drive.svg"
+                      alt="GoogleDrive"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+         <!-- Update img src and alt attribute  -->
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/LPG detection system.jpg"
+                  alt="contribute dev"
+                />
+              </picture>
+            </div>
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">AAC (Alternative and Augmentative Communication) Device for Cognitive and Speaking Disabilities</h3>
+                <!-- Add small description of your project  -->
+                <p class="work-text">
+                  An affordable, standalone AAC device for individuals with cognitive and speaking disabilities, supporting 32+ languages with customizable hardware options.
+                </p>
+                <ol class="work-technologies">
+                  <li>Microcontroller,</li>
+                  <li>LCD/LED Display</li>
+                  <li>Voltage devider base keypad</li>
+                  <li>Speech Synthesis</li>
+                  <li>EasyEDA</li>
+                </ol>
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="https://drive.google.com/drive/folders/13z-dGzDqSKJV2BbadPOTmkwdp65V9C4B?usp=drive_link" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/google_drive.svg"
+                      alt="GoogleDrive"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+         <!-- Update img src and alt attribute  -->
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/AAC.jpg"
+                  alt="contribute dev"
+                />
+              </picture>
+            </div>
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">Contact Manager Application for HR Departments (C Programming)</h3>
+                <!-- Add small description of your project  -->
+                <p class="work-text">
+                  A C language-based contact manager app designed for HR departments to efficiently manage employee data with low memory consumption and strong data security.
+                </p>
+                <ol class="work-technologies">
+                  <li>C Programming</li>
+                  <li>File Management</li>
+                </ol>
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="#" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/google_drive.svg"
+                      alt="GoogleDrive"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+         <!-- Update img src and alt attribute  -->
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/contact-maneger.jpg"
+                  alt="contribute dev"
+                />
+              </picture>
+            </div>
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">Digital MCB with Overload, Short-Circuit Protection, and Auto Inverter Shift</h3>
+                <!-- Add small description of your project  -->
+                <p class="work-text">
+                  A digital MCB that provides overload protection, short-circuit prevention, current adjustability, and automatic shifting between inverter and main supply.
+                </p>
+                <ol class="work-technologies">
+                  
+                  <li>Op-Amp</li>
+                  <li>Overload Protection</li>
+                  <li>Short Circuit Detection</li>
+                  <li>shufling between inverter and mainSupply</li>
+                  <li>EasyEDA</li>
+                </ol>
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="https://drive.google.com/drive/folders/1zrrdNVbl8j2y-3H8IgpAPvW9ewISuyAb?usp=drive_link" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a>
+
+                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/google_drive.svg"
+                      alt="GoogleDrive"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+         <!-- Update img src and alt attribute  -->
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/Digital-MCB.jpg"
+                  alt="contribute dev"
+                />
+              </picture>
+            </div>
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">
+                  Blood Report Analysis Using CBC Report</h3>
+                <!-- Add small description of your project  -->
+                <p class="work-text">
+                  Developed a CBC Blood Report Analysis System using ATmega328P, where users input CBC values via a keypad. The system analyzes data and indicates potential health issues with red (alert) and green (normal) signals for easy identification.
+                </p>
+                <ol class="work-technologies">
+                  <li>ATMEGA328p</li>
+                  <li>Liquidcrystal Display</li>
+                  <li>Keypad</li>
+                </ol>
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="#" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/google_drive.svg"
+                      alt="GoogleDrive"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+         <!-- Update img src and alt attribute  -->
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/Analysis.jpg"
+                  alt="contribute dev"
+                />
+              </picture>
+            </div>
+            <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">Contact Manager Application for HR Departments (C Programming)</h3>
+                <!-- Add small description of your project  -->
+                <p class="work-text">
+                  A C language-based contact manager app designed for HR departments to efficiently manage employee data with low memory consumption and strong data security.
+                </p>
+                <ol class="work-technologies">
+                  <li>C Programming</li>
+                  <li>File Management</li>
+                </ol>
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="#" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/google_drive.svg"
+                      alt="GoogleDrive"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+         <!-- Update img src and alt attribute  -->
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/contact-maneger.jpg"
+                  alt="contribute dev"
+                />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- I write blog posts on dev.to at https://dev.to/devsyedmohsin. I have linked my articles accordingly, so please update the article title, description, and link accordingly. For example, if you write an article on Medium, link your article to Medium. Also, don't forget to update the reaction count. -->
+
+      <section class="article">
+        <div class="container">
+          <h2 class="h2" id="blog">My Articles</h2>
+          <div class="article-boxes">
+            <article class="article-box featured-article">
+              <div class="article-textbox">
+                <div>
+                  <h3 class="h3">
+                    The Power of Charlieplexing: Efficiently Interfacing 72 Buttons with Just 9 Arduino Pins
+                  </h3>
+                  <p class="article-text">
+                    Charlieplexing is a powerful technique that allows you to control multiple devices with fewer pins. By using just 9 Arduino pins, I was able to interface 72 buttons, showcasing the efficiency of this method. The number of devices that can be interfaced using Charlieplexing is calculated by the formula: n(n-1), where n is the number of available pins.
+<br><br>This method leverages the principle of using each pin to create a unique combination of high and low states, reducing the need for a large number of I/O pins. It’s perfect for projects with limited pins and high device requirements, offering an innovative solution for compact, efficient button interfaces in electronics and IoT systems.
+This approach saves valuable pins while ensuring reliable button input handling, making it an ideal solution for resource-constrained applications.
+                  </p>
+                </div>
+                <div class="article-info">
+                  <a href="https://dev.to/devsyedmohsin" class="link" target="_blank" rel="noopener"
+                    >Continue reading</a
+                  >
+                  <span class="reaction-count">
+                    <img src="./assets/images/heart-outline.svg" alt="heart" />
+                    416
+                  </span>
+                </div>
+              </div>
+              <picture class="article-illustration">
+                <img
+                  src="assets/images/work/charlie_plexing.png"
+                  alt="MacBook Pro"
+                  loading="lazy"
+                />
+              </picture>
+            </article> 
+          
+      <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  -->
+
+      <section class="skills">
+        <div class="container">
+            <h2 class="h2" id="skills">Specializations</h2>
+            <div class="skills-imgs">
+                <div class="skill-item">
+                    <img src="assets/images/work/c.jpg" alt="C" class="skills-img" loading="lazy" title="C">
+                    <p class="skill-label">C Programming</p>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/images/work/python.jpg" alt="Python" class="skills-img" loading="lazy" title="Python">
+                    <p class="skill-label">Python</p>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/images/work/iot.jpg" alt="IoT" class="skills-img" loading="lazy" title="IoT">
+                    <p class="skill-label">IoT Development</p>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/images/work/microchip.png" alt="Microcontrollers" class="skills-img" loading="lazy" title="Microcontrollers">
+                    <p class="skill-label">Microcontrollers</p>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/images/work/arduino.jpg" alt="Arduino" class="skills-img" loading="lazy" title="Arduino">
+                    <p class="skill-label">Arduino</p>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/images/work/html.jpg" alt="HTML" class="skills-img" loading="lazy" title="HTML">
+                    <p class="skill-label">HTML</p>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/images/work/css.jpg" alt="CSS" class="skills-img" loading="lazy" title="CSS">
+                    <p class="skill-label">CSS</p>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/images/work/js.jpg" alt="JavaScript" class="skills-img" loading="lazy" title="JavaScript">
+                    <p class="skill-label">JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/images/work/power electronics.png" alt="Power Electronics" class="skills-img" loading="lazy" title="Power Electronics">
+                    <p class="skill-label">Power Electronics</p>
+                </div>
+                <div class="skill-item">
+                    <img src="assets/images/work/RF.png" alt="RF Technology" class="skills-img" loading="lazy" title="RF Technology">
+                    <p class="skill-label">RF Technology</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- achivment section -->
+
+    <section class="achievements">
+      <div class="container">
+          <h2 class="h2" id="achievements">Achievements</h2>
+          <div class="achievements-row">
+              <div class="achievement-card">
+                  <img src="assets/images/work/arduino.jpg" alt="Hackathon Winner" class="achievement-img" loading="lazy">
+                  <h3 class="achievement-title">Hackathon Winner</h3>
+                  <p class="achievement-desc">Won a national-level Arduino Hackathon at Lakshya Tech Fest, LDCE</p>
+                  <a href="#" class="link_card">Click To More</a>
+              </div>
+              <div class="achievement-card">
+                  <img src="assets/images/work/ideathon.png" alt="IEEE Certification" class="achievement-img" loading="lazy">
+                  <h3 class="achievement-title">Hackathon Winner</h3>
+                  <p class="achievement-desc">Won the National Level Gandhian Ideathon 5th Edition, organized by Auro University.</p>
+                  <a href="#" class="link_card">Click To More</a>
+              </div>
+              <div class="achievement-card">
+                  <img src="assets/images/work/award.jpg" alt="Innovation Award" class="achievement-img" loading="lazy">
+                  <h3 class="achievement-title">Innovation Award</h3>
+                  <p class="achievement-desc">Honored to receive the i-SCALE Award 2025 from GTU for our contributions to the startup ecosystem with SWAR! </p>
+                  <a href="#" class="link_card">Click To More</a>
+                </div>
+          </div>
+          <div class="achievements-row">
+              <div class="achievement-card">
+                  <img src="assets/images/work/hakathon.jpeg" alt="Patent Filed" class="achievement-img" loading="lazy">
+                  <h3 class="achievement-title">Hackathon Winner</h3>
+                  <p class="achievement-desc">Won CVMU National-Level Hackathon.</p>
+                  <a href="#" class="link_card">Click To More</a>
+              </div>
+
+              <!-- <div class="achievement-card">
+                  <img src="assets/images/achievements/conference.jpg" alt="Tech Conference Speaker" class="achievement-img" loading="lazy">
+                  <h3 class="achievement-title">Tech Conference Speaker</h3>
+                  <p class="achievement-desc">Delivered a talk on Industry 4.0 at a prestigious tech event.</p>
+                  <a href="#" class="link_card">Click To More</a>
+              </div>
+              <div class="achievement-card">
+                  <img src="assets/images/achievements/startup.jpg" alt="Startup Founder" class="achievement-img" loading="lazy">
+                  <h3 class="achievement-title">Startup Founder</h3>
+                  <p class="achievement-desc">Founded an IoT-based startup focusing on smart automation.</p>
+                  <a href="#" class="link_card">Click To More</a>
+              </div> -->
+          </div>
+          
+          <!-- Click for More Content Link (Below All Cards) -->
+      </div>
+  </section>
+  
+    
+
+      <!-- Replace testimonials, author name, author job, img src and, alt attributes -->
+
+      <section>
+        <h2 class="h2">Media & Press Coverage</h2>
+        <div class="container">
+          <ol class="testimonials">
+            <li class="testimonial">
+              <blockquote class="testimonial-text">
+                Working with Syed was a great experience. His drive for clean aesthetics and his open communication style helped us collaborate closely on the solution.
+              </blockquote>
+              <figure class="testimonial-author">
+                <img
+                  src="assets/images/testimonials/rich-harris.png"
+                  alt="Rich Harris"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <h3 class="testimonial-author-name">Harris Kareem</h3>
+                  <p class="testimonial-author-job">Developer @Outlets</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="testimonial">
+              <blockquote class="testimonial-text">
+                Syed is a fantastic UI/UX designer and developer with a keen sense for marketing, and lead generation. He's the only designer I know who also has a deep understanding for code and front-end development.
+              </blockquote>
+              <figure class="testimonial-author">
+                <img
+                  src="assets/images/testimonials/frank-mcsherry.webp"
+                  alt="Andrew Mead"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <h3 class="testimonial-author-name">
+                   Andrew Mead
+                  </h3>
+                  <p class="testimonial-author-job">Chief Scientist @Logos
+                  </p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="testimonial">
+              <blockquote class="testimonial-text">
+             
+                Talented artist, experienced with various
+                media and can make any project you are working on look good. He is
+                easy to work with and is a self starter. I would work with Syed
+                again.
+              </blockquote>
+              <figure class="testimonial-author">
+                <img
+                  src="assets/images/testimonials/brian-hirsh.png"
+                  alt="Brian Hirsh"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <h3 class="testimonial-author-name">Brian Hirsh</h3>
+                  <p class="testimonial-author-job">Head @Zero-in</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="testimonial">
+              <blockquote class="testimonial-text">
+                Syed is a true professional with amazing talent. He is a creative
+                thinker, has his finger on the pulse of whats to come, and
+                absolutely one of the quickest and best problem solvers I have
+                ever met.
+              </blockquote>
+              <figure class="testimonial-author">
+                <img
+                  src="assets/images/testimonials/adam.png"
+                  alt="Adam Argalye"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <h3 class="testimonial-author-name">Adam Argalye</h3>
+                  <p class="testimonial-author-job">SWE @Google</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="testimonial">
+              <blockquote class="testimonial-text">
+               Syed is one of my favourite people to work with. He's my go-to colleague when trouble shooting any new technique or technology because she understands how to tackle unknown problems with gumption. 
+              </blockquote>
+              <figure class="testimonial-author">
+                <img
+                  src="assets/images/testimonials/val-head.png"
+                  alt="Val Head"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <h3 class="testimonial-author-name">Val Head</h3>
+                  <p class="testimonial-author-job">CEO @Engines</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="testimonial">
+              <blockquote class="testimonial-text">
+                Syed is a talented artist. He is very experienced with various
+                media and can make any project you are working on look good. He is
+                easy to work with and is a self starter. I would work with Syed
+                again.
+              </blockquote>
+              <figure class="testimonial-author">
+                <img
+                  src="assets/images/testimonials/tim-satterwhite.webp"
+                  alt="Gary Simon"
+                  loading="lazy"
+                />
+                <figcaption>
+                  <h3 class="testimonial-author-name">Gary Simon</h3>
+                  <p class="testimonial-author-job">A11y Advocate @W3C</p>
+                </figcaption>
+              </figure>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="contact">
+        <div class="container">
+          <h2 class="h2" id="contact">Send Message</h2>
+          <div class="contact-content">
+            <div class="contact-textbox">
+              <!-- Please comment this component if you're not available for hire -->
+              <strong href="#" class="hire-alert">
+                <span class="indicator"></span>
+                Available for hire
+              </strong>
+              <p class="contact-text">
+                As an IoT developer and electronics engineer, I design and build innovative hardware systems, integrating microcontrollers, circuits, and automation solutions with a focus on efficiency and real-world applications. I enjoy creating projects from scratch, bringing ideas to life through hands-on experimentation and precise engineering.
+                In my spare time, I explore emerging technologies like AI-powered IoT, Edge Computing, and Industry 4.0, constantly pushing the boundaries of what's possible in electronics and automation.      
+              </p>
+              <p class="contact-text">
+                As an IoT developer, I'm passionate about open-source development. In my spare time, I enjoy designing interesting circuits, blending my creativity with technology to build innovative solutions.
+              </p>
+              <!-- Replace src with your signatures and name -->
+              <img
+                src="assets/images/signatures.png"
+                alt="Syed Mohsin"
+                class="signatures"
+                loading="lazy"
+              />
+            </div>
+            <form action="#" class="contact-form" netlify>
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  required
+                  inputmode="email"
+                />
+              </div>
+              <div class="form-field">
+                <label for="message">How can I help you?</label>
+                <textarea name="message" id="message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-cta">Send</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Update href and src attributes -->
+          <nav>
+            <ol class="footer-links">
+              <li class="footer-link">
+                <a title="GoogleDrive" href="https://GoogleDrive.com/devsyedmohsin" target="_blank" rel="noopener"
+                  ><img
+                    loading="lazy"
+                    src="assets/images/social-links/google_drive.svg"
+                    alt="GoogleDrive"
+                /></a>
+              </li>
+              <li class="footer-link">
+                <a title="Codepen" href="https://GoogleDrive.com/devsyedmohsin" target="_blank" rel="noopener"
+                  ><img
+                    loading="lazy"
+                    src="assets/images/social-links/codepen.svg"
+                    alt="Codepen"
+                /></a>
+              </li>
+              <li class="footer-link">
+                <a title="Linkedin" href="https://www.linkedin.com/in/darshit-vaghani-84b1a1265?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener"
+                  ><img
+                    loading="lazy"
+                    src="assets/images/social-links/linkedin.svg"
+                    alt="Linkedin"
+                /></a>
+              </li>
+              <li class="footer-link">
+                <a title="Twitter" href="https://GoogleDrive.com/devsyedmohsin" target="_blank" rel="noopener"
+                  ><img
+                    loading="lazy"
+                    src="assets/images/social-links/twitter.svg"
+                    alt="Twitter"
+                /></a>
+              </li>
+            </ol>
+          </nav>
+          <p class="footer-text">
+            &copy; <span>2024</span> - Template designed & developed by <a target="_blank" rel="noopener" href="https://GoogleDrive.com/devsyedmohsin">Syed Mohsin.</a>
+          </p>
+          <label class="theme-switch" for="theme-switch">
+            <span>Dark Theme</span>
+            <input type="checkbox" id="theme-switch" role="switch"/>
+          </label>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

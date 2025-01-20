@@ -1,0 +1,45 @@
+ <div class="work-box">
+              <div class="work-textbox">
+                <!-- Add your project title here -->
+                <h3 class="h3">Class-E Chopper (Four Quadrant Motor Operation) for DC Motor Speed Control</h3>
+                <!-- Add small description of your project  -->
+                <p class="work-text">
+                  A portable DC motor controller with four-quadrant operation, offering speed and direction control with OLED display, high-rating MOSFETs, and an Atmega 328p microcontroller.
+                </p>
+                <ol class="work-technologies">
+                  Atmega 328p, OLED Display, MOSFETs, Keypad, DC Motor, EasyEDA
+                  <li>ATMEGA328p</li>
+                  <li>OLED Display</li>
+                  <li>MOSFETs</li>
+                  <li>EasyEDA</li>
+                </ol>
+                <div class="work-links">
+                  <!-- Add url of project in href attribute -->
+                  <a href="#" target="_blank" rel="noopener" class="link"
+                    >Explore this project</a
+                  >
+
+                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    title="Source code"
+                  >
+                    <img
+                      src="assets/images/social-links/github.svg"
+                      alt="GitHub"
+                      loading="lazy"
+                    />
+                  </a>
+                </div>
+              </div>
+         <!-- Update img src and alt attribute  -->
+              <picture class="work-img">
+                <img
+                  loading="lazy"
+                  src="assets/images/work/contribute-dev.webp"
+                  alt="contribute dev"
+                />
+              </picture>
+            </div>
