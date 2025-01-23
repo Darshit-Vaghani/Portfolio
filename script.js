@@ -6,16 +6,14 @@ const workImgs = document.querySelectorAll(".work-img");
 const mainEl = document.querySelector("main");
 const yearEl = document.querySelector(".footer-text span");
 
+// Toggle Navigation Menu
 const toggleNav = () => {
   nav.classList.toggle("hidden");
-
-  // Prevent screen from scrolling when menu is opened
   document.body.classList.toggle("lock-screen");
 
   if (nav.classList.contains("hidden")) {
     btnToggleNav.textContent = "menu";
   } else {
-    // When menu is opened after transition change text respectively
     setTimeout(() => {
       btnToggleNav.textContent = "close";
     }, 475);
@@ -23,7 +21,6 @@ const toggleNav = () => {
 };
 
 btnToggleNav.addEventListener("click", toggleNav);
-
 navMenu.addEventListener("click", (e) => {
   if (e.target.localName === "a") {
     toggleNav();
@@ -36,54 +33,63 @@ document.body.addEventListener("keydown", (e) => {
   }
 });
 
-// Animating work instances on scroll
+// Update Achievements Section Theme
+function updateAchievementsTheme() {
+  const isDarkMode = document.body.classList.contains("dark");
+  document.querySelectorAll(".achievement-card").forEach(card => {
+    card.style.backgroundColor = isDarkMode ? "#222" : "#fff";
+    card.style.color = isDarkMode ? "#fff" : "#000";
+  });
+}
 
+// Animate Work Section on Scroll
 workImgs.forEach((workImg) => workImg.classList.add("transform"));
 
 let observer = new IntersectionObserver(
   (entries) => {
     const [entry] = entries;
-    const [textbox, picture] = Array.from(entry.target.children);
     if (entry.isIntersecting) {
+      const [textbox, picture] = Array.from(entry.target.children);
       picture.classList.remove("transform");
-      Array.from(textbox.children).forEach(
-        (el) => (el.style.animationPlayState = "running")
-      );
+      Array.from(textbox.children).forEach(el => el.style.animationPlayState = "running");
     }
   },
   { threshold: 0.3 }
 );
 
-workEls.forEach((workEl) => {
-  observer.observe(workEl);
-});
+workEls.forEach((workEl) => observer.observe(workEl));
 
-// Toggle theme and store user preferred theme for future
-
+// Toggle Theme and Store Preference
 const switchThemeEl = document.querySelector('input[type="checkbox"]');
 const storedTheme = localStorage.getItem("theme");
 
-switchThemeEl.checked = storedTheme === "dark" || storedTheme === null;
+// Apply stored theme on load
+if (storedTheme === "dark") {
+  document.body.classList.add("dark");
+  switchThemeEl.checked = true;
+} else {
+  document.body.classList.add("light");
+  switchThemeEl.checked = false;
+}
+updateAchievementsTheme(); // Ensure Achievements section updates on page load
 
 switchThemeEl.addEventListener("click", () => {
   const isChecked = switchThemeEl.checked;
-
-  if (!isChecked) {
-    document.body.classList.remove("dark");
-    document.body.classList.add("light");
-    localStorage.setItem("theme", "light");
-    switchThemeEl.checked = false;
-  } else {
+  
+  if (isChecked) {
     document.body.classList.add("dark");
     document.body.classList.remove("light");
     localStorage.setItem("theme", "dark");
+  } else {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+    localStorage.setItem("theme", "light");
   }
+  updateAchievementsTheme(); // Update Achievements cards on theme change
 });
 
 // Trap the tab when menu is opened
-
 const lastFocusedEl = document.querySelector('a[data-focused="last-focused"]');
-
 document.body.addEventListener("keydown", (e) => {
   if (e.key === "Tab" && document.activeElement === lastFocusedEl) {
     e.preventDefault();
@@ -91,11 +97,9 @@ document.body.addEventListener("keydown", (e) => {
   }
 });
 
-// Rotating logos animation
-
+// Rotating Logos Animation
 const logosWrappers = document.querySelectorAll(".logo-group");
-
-const sleep = (number) => new Promise((res) => setTimeout(res, number));
+const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
 
 logosWrappers.forEach(async (logoWrapper, i) => {
   const logos = Array.from(logoWrapper.children);
@@ -111,4 +115,21 @@ logosWrappers.forEach(async (logoWrapper, i) => {
   }, 5600);
 });
 
+// Set current year in the footer
 yearEl.textContent = new Date().getFullYear();
+
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault(); // Prevents default form submission
+  fetch(this.action, {
+      method: this.method,
+      body: new FormData(this),
+      headers: { 'Accept': 'application/json' }
+  }).then(response => {
+      if (response.ok) {
+          alert("Thank you! Your message has been sent.");
+          document.querySelector("form").reset();
+      } else {
+          alert("Oops! Something went wrong. Please try again.");
+      }
+  }).catch(error => alert("Error! Please check your internet connection."));
+});
