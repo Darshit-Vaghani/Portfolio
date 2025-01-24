@@ -133,3 +133,8 @@ document.querySelector("form").addEventListener("submit", function(e) {
       }
   }).catch(error => alert("Error! Please check your internet connection."));
 });
+
+
+// IMAGE SLIDER
+
+//-----------------
