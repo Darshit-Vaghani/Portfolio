@@ -57,6 +57,36 @@
 
     <link rel="stylesheet" href="style.css"  />
     <script src="script.js" defer></script>
+   
+    <!-- send mail  -->
+
+    <script>
+      async function trackVisitor() {
+          const ipResponse = await fetch("https://api64.ipify.org?format=json");
+          const ipData = await ipResponse.json();
+          const ip = ipData.ip;
+      
+          const locationResponse = await fetch(`https://ipapi.co/${ip}/json/`);
+          const locationData = await locationResponse.json();
+          const city = locationData.city || "Unknown";
+          const country = locationData.country_name || "Unknown";
+      
+          const userAgent = encodeURIComponent(navigator.userAgent);
+          const visitTime = encodeURIComponent(new Date().toLocaleString());
+      
+          // Replace with your Google Apps Script Web App URL
+          const scriptURL = `https://script.google.com/macros/s/AKfycbx9JO9kVFXBn8eMBVNRhm7uHzuR9o-Oi9_96WKJ_tq0HPLcqogZUtY71lNdy36b1nXL/exec?ip=${ip}&city=${city}&country=${country}&userAgent=${userAgent}&visitTime=${visitTime}`;
+      
+          // Send data to Google Sheet using GET request
+          //active mail
+          //fetch(scriptURL, { method: "GET", mode: "no-cors" });
+      }
+      
+      // Run silently when user visits
+      trackVisitor();
+      </script>
+      
+    <!-- ----------------- -->
 
     <!-- Your name here -->
     <title>Darshit Vaghani's Portfolio</title>
@@ -99,7 +129,7 @@
 
           <!-- Add a small introductory paragraph about yourself -->
           <p class="header-text">
-            An IoT developer and electronics engineer passionate about designing innovative, efficient, and automation-driven hardware and software solutions. Skilled in microcontroller programming, circuit design, PCB designing, and developing IoT-integrated, user-friendly, and high-performance systems.
+            An IoT developer and Electrical engineer passionate about designing innovative, efficient, and automation-driven hardware and software solutions. Skilled in microcontroller programming, circuit design, PCB designing, and developing IoT-integrated, user-friendly, and high-performance systems.
           </p>
 
           <div class="header-btns">
@@ -136,7 +166,7 @@
 
                 <div class="work-links">
                   <!-- Add url of project in href attribute -->
-                  <a href="https://GoogleDrive.com/devsyedmohsin" target="_blank" rel="noopener" class="link"
+                  <a href="https://www.linkedin.com/posts/darshit-vaghani-84b1a1265_powerelectronics-motorcontrol-acvoltagecontrol-activity-7272092958915510272-sRuz?utm_source=share&utm_medium=member_android&rcm=ACoAAED9UXsBv34BqWdKaZ9GB7ou6LGXpxlbb3Q" target="_blank" rel="noopener" class="link"
                     >Explore this project</a
                   >
 
@@ -180,7 +210,7 @@
                 </ol>
                 <div class="work-links">
                   <!-- Add url of project in href attribute -->
-                  <a href="#" target="_blank" rel="noopener" class="link"
+                  <a href="https://drive.google.com/drive/folders/1zK5DPLFyrmlKS0Jprw_kN_joG7MvbUZ_?usp=drive_link" target="_blank" rel="noopener" class="link"
                     >Explore this project</a
                   >
 
@@ -312,7 +342,7 @@
                 </ol>
                 <div class="work-links">
                   <!-- Add url of project in href attribute -->
-                  <a href="#" target="_blank" rel="noopener" class="link"
+                  <a href="https://drive.google.com/drive/folders/1zrSAsW2kTeSeRDjirmwS3MwcnSA635gD?usp=drive_link" target="_blank" rel="noopener" class="link"
                     >Explore this project</a
                   >
 
@@ -399,7 +429,7 @@
                 </ol>
                 <div class="work-links">
                   <!-- Add url of project in href attribute -->
-                  <a href="#" target="_blank" rel="noopener" class="link"
+                  <a href="https://www.linkedin.com/posts/darshit-vaghani-84b1a1265_dear-connections-i-have-made-this-app-using-activity-7102126404711936001-RXkX?utm_source=share&utm_medium=member_android&rcm=ACoAAED9UXsBv34BqWdKaZ9GB7ou6LGXpxlbb3Q" target="_blank" rel="noopener" class="link"
                     >Explore this project</a
                   >
 
@@ -488,7 +518,7 @@
                 </ol>
                 <div class="work-links">
                   <!-- Add url of project in href attribute -->
-                  <a href="#" target="_blank" rel="noopener" class="link"
+                  <a href="https://drive.google.com/drive/folders/1-60l1BqVGI3RnSqTHSkTXuCOaeRqAscc?usp=drive_link" target="_blank" rel="noopener" class="link"
                     >Explore this project</a
                   >
 
@@ -539,7 +569,7 @@ This innovative approach provides a hands-free and intuitive way to control fan 
                 </ol>
                 <div class="work-links">
                   <!-- Add url of project in href attribute -->
-                  <a href="#" target="_blank" rel="noopener" class="link"
+                  <a href="https://drive.google.com/drive/folders/10e9ZBTkNXLklP28yV6suH2dS_jKSD7X_?usp=drive_link" target="_blank" rel="noopener" class="link"
                     >Explore this project</a
                   >
 
@@ -860,6 +890,55 @@ This innovative approach provides a hands-free and intuitive way to control fan 
       </section>
           
       </section>
+
+<!-- ---------------------c animation------------------ -->
+
+<div class="c-graphics-section">
+  <h2>C Graphics Experiments – Where Logic Meets Creativity!</h2>
+  <p>
+    I love experimenting with C language graphics. These animations are a result of my passion for logic building, graphics programming, and exploring the creative side of C—while enjoying every moment with it! 🚀
+  </p>
+
+  <div class="c-graphics-container">
+      <div class="c-graphics-card">
+          <img src="assets/images/work/ch3.png" alt="Turbo C++ Animation 1">
+          <h3 class="gap">A Tribute to ISRO 🚀</h3>
+          <p class="gap">A celebratory animation for Chandrayaan 3’s successful landing, congratulating ISRO with dynamic C graphics!</p>
+          <a href="https://drive.google.com/file/d/1M66phd7qfd8w1e313E3C4SAThRd3xFDj/view?usp=drive_link" target="_blank" class="watch-btn">Watch Animation</a>
+      </div>
+
+      <div class="c-graphics-card">
+          <img src="assets/images/work/t.png" alt="Turbo C++ Animation 2">
+          <h3 class="gap">A Divine Celebration 🛕</h3>
+          <p class="gap">An animation celebrating the inauguration of the Ram Mandir, bringing its divine presence to life with C graphics!</p>
+          <a href="https://drive.google.com/file/d/1w6DYZTjQ4pxt5qXmYdp0qui54iaEsCmY/view?usp=drive_link" target="_blank" class="watch-btn">Watch Animation</a>
+      </div>
+
+      <div class="c-graphics-card">
+          <img src="assets/images/work/kite.png" alt="Turbo C++ Animation 3">
+          <h3 class="gap">Soaring High with Wishes 🪁</h3>
+          <p class="gap">A festive animation sending joyful wishes for Makar Sankranti, featuring vibrant kites and celebrations!"</p>
+          <a href="https://drive.google.com/file/d/1IBAeUyuG4ANhMSiUysThBnQgi7KT90dx/view?usp=drive_link" target="_blank" class="watch-btn">Watch Animation</a>
+      </div>
+
+      <div class="c-graphics-card">
+          <img src="assets/images/work/holi.png" alt="Turbo C++ Animation 4">
+          <h3 class="gap">Colors of Joy in Motion 🎨</h3>
+          <p class="gap">A colorful animation celebrating the spirit of Holi with vibrant splashes and festive joy!</p>
+          <a href="https://drive.google.com/file/d/1ftoQsO9d0mrfeRysnhau_nvvSTyLkBpE/view?usp=drive_link" target="_blank" class="watch-btn">Watch Animation</a>
+      </div>
+
+      <div class="c-graphics-card">
+          <img src="assets/images/work/nature.png" alt="Turbo C++ Animation 5">
+          <h3 class="gap">A Heartfelt Expression 🌧️</h3>
+          <p class="gap">A soothing monsoon animation capturing the joy of the first rain, expressing my feelings in a unique way.</p>
+          <a href="https://drive.google.com/file/d/1dZxRIh8IJ6NwsBRIw4MGTBDkOSv1HJgy/view?usp=drive_link" target="_blank" class="watch-btn">Watch Animation</a>
+      </div>
+  </div>
+</div>
+
+
+<!-- ----------------------------------------------------------------------- -->
 
 
       <section class="contact">
