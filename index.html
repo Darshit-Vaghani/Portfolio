@@ -63,7 +63,7 @@
     <script>
       async function trackVisitor() {
           const ipResponse = await fetch("https://api64.ipify.org?format=json");
-          const ipData = await ipResponse.json();
+           ipData = await ipResponse.json();
           const ip = ipData.ip;
       
           const locationResponse = await fetch(`https://ipapi.co/${ip}/json/`);
@@ -75,11 +75,11 @@
           const visitTime = encodeURIComponent(new Date().toLocaleString());
       
           // Replace with your Google Apps Script Web App URL
-          const scriptURL = `https://script.google.com/macros/s/AKfycbx9JO9kVFXBn8eMBVNRhm7uHzuR9o-Oi9_96WKJ_tq0HPLcqogZUtY71lNdy36b1nXL/exec?ip=${ip}&city=${city}&country=${country}&userAgent=${userAgent}&visitTime=${visitTime}`;
+          const scriptURL = `https://script.google.com/macros/s/AKfycbwrwfjPcOudVj2LBk7J8z8lKm6f8xQgZIOWz7lXVScQNLrEiqCerjZrWBGdFmt68Bg0/exec?city=${city}&country=${country}&userAgent=${userAgent}&visitTime=${visitTime}`;
       
           // Send data to Google Sheet using GET request
           //active mail
-          //fetch(scriptURL, { method: "GET", mode: "no-cors" });
+          fetch(scriptURL, { method: "GET", mode: "no-cors" });
       }
       
       // Run silently when user visits

@@ -1512,7 +1512,9 @@ input:checked {
     text-align: center;
     padding-left: 0;
   }
-
+  .content-box h2 {
+    margin-top: 13px;
+  }
   .read-more {
     align-self: center; /* Center button for mobile */
   }
@@ -1598,7 +1600,8 @@ input:checked {
   
   .rectangle {
        background-color: var(--card-bg);
-      color: var(--text-color);
+      color: var(--text-color); 
+      /* color: #dfd0d0; */
       padding: 12px 20px;
       border-radius: 15px;
       min-width: 200px;
@@ -1618,7 +1621,7 @@ input:checked {
   .rectangle p {
       margin: 5px 0 0;
       font-size: 14px;
-      color: #333;
+      color: #dfd0d0;
   }
   
 
