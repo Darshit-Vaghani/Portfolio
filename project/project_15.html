@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Showcase - House Wiring Demonstration Model</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #1a1a1a;
+      --secondary-color: #2d2d2d;
+      --accent-color: #00ff88;
+      --text-color: #ffffff;
+    }
+    body {
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    @keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+    .project-card { background: var(--secondary-color); border-radius:20px; border:1px solid rgba(255,255,255,0.1); transition:transform 0.3s ease; margin-bottom:2rem; animation:fadeInUp 0.8s ease-out; box-shadow:0 10px 30px rgba(0,0,0,0.3); }
+    .project-card:hover { transform:translateY(-10px); box-shadow:0 15px 40px rgba(0,255,136,0.2); }
+    .carousel-item { transition:opacity 0.8s ease-in-out; height:400px; background:#000; }
+    .carousel-item img { object-fit:cover; height:100%; width:100%; border-radius:15px; }
+    .skill-badge { background:linear-gradient(45deg,var(--accent-color),#00ccff); color:var(--primary-color); margin:5px; padding:8px 15px; border-radius:25px; font-weight:600; opacity:0; transform:translateY(20px); transition:all 0.4s ease; white-space:nowrap; }
+    .skill-badge.visible { opacity:1; transform:translateY(0); }
+    .section-title { position:relative; padding-bottom:10px; margin:2rem 0 1.5rem; font-size:1.5rem; }
+    .section-title::after { content:''; position:absolute; bottom:0; left:0; width:50px; height:3px; background:linear-gradient(90deg,var(--accent-color),transparent); border-radius:2px; }
+    .link-btn { background:rgba(255,255,255,0.1); color:var(--text-color)!important; border-radius:10px; padding:12px 25px; margin:8px; transition:all 0.3s ease; display:inline-flex; align-items:center; gap:10px; }
+    .link-btn:hover { background:var(--accent-color); transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,255,136,0.3); }
+    .project-video { border-radius:15px; overflow:hidden; border:2px solid var(--accent-color); box-shadow:0 0 30px rgba(0,255,136,0.1); margin:2rem 0; }
+    .timeline-info { background:linear-gradient(45deg,rgba(0,255,136,0.1),transparent); border-radius:15px; padding:20px; margin:15px 0; border:1px solid rgba(0,255,136,0.2); }
+    .award-badge { background:linear-gradient(45deg,#ffd700,#ffaa00); color:#000; padding:10px 20px; border-radius:25px; display:inline-flex; align-items:center; gap:10px; margin:10px 0; }
+    .target-audience { list-style:none; padding-left:0; font-size:19px; }
+    .target-audience li { display:flex; align-items:center; margin-top:5px; }
+    .bullet { font-size:1.2em; margin-right:8px; }
+    .title { font-size:35px; font-family:monospace; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark"><div class="container"><a class="navbar-brand" href="#" style="font-weight:800;"><span style="color: var(--accent-color);">#</span>DeaConnections</a></div></nav>
+  <div class="container mt-5 pt-5"><div class="project-card p-4">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active"><img src="https://ik.imagekit.io/ug3weuxhp/work/wd-1.jpeg" alt="House Wiring Model 1"></div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h2 class="display-5 title fw-bold mb-3">House Wiring Demonstration Model</h2>
+        <div class="d-flex flex-wrap my-4">
+          <a href="#" class="link-btn"><i class="fab fa-github"></i> Source Code</a>
+          <a href="#" class="link-btn"><i class="fab fa-youtube"></i> Demo Video</a>
+          <a href="#" class="link-btn" target="_blank"><i class="fab fa-google-drive"></i> Project Files</a>
+        </div>
+        <div class="mb-4 d-flex flex-wrap gap-2 justify-content-center" id="skills-container">
+          <span class="skill-badge">3-Way Switch</span>
+          <span class="skill-badge">2-Way Switch</span>
+          <span class="skill-badge">Clap Switch</span>
+          <span class="skill-badge">Safe Switch</span>
+          <span class="skill-badge">Inverter</span>
+          <span class="skill-badge">Battery Charger</span>
+          
+        </ul>
+        <div class="timeline-info">
+          <p class="mb-2"><i class="fas fa-rocket me-2"></i><strong>Started:</strong> February 1, 2025</p>
+          <p class="mb-2"><i class="fas fa-flag-checkered me-2"></i><strong>Completed:</strong> February 28, 2025</p>
+          <p class="mb-0"><i class="fas fa-clock me-2"></i><strong>Duration:</strong> 4 Weeks</p>
+        </div>
+      </div>
+    </div>
+    <div class="project-video ratio ratio-16x9">
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/mjuF5BVtfbQ?si=j8rgYwYNYK-RCxWy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="row g-4 mt-2">
+      <div class="col-md-6">
+        <h4 class="section-title">Project Overview</h4>
+        <p class="lead">A first-semester engineering demonstration of various house wiring techniques, combining fundamental switch types with modern safety and convenience features.</p>
+        <h4 class="section-title">Key Features</h4>
+        <ul class="list-unstyled">
+          <li class="mb-3">🔸 <strong>3-Way & 2-Way Switches:</strong> Demonstrates conventional load control configurations.</li>
+          <li class="mb-3">🔸 <strong>Clap Switch:</strong> Sound-activated control for appliances without microcontrollers.</li>
+          <li class="mb-3">🔸 <strong>Safe Switch:</strong> Operates at 3V DC to safely drive AC loads in wet conditions.</li>
+          <li class="mb-3">🔸 <strong>Inbuilt Inverter:</strong> Ensures continuous power during outages.</li>
+          <li class="mb-3">🔸 <strong>Auto Cutoff Charger:</strong> Prevents battery overcharge with smart cutoff.</li>
+          <li class="mb-3">🔸 <strong>Battery Level Indicator:</strong> Real-time charge status display.</li>
+          <li class="mb-3">🔸 <strong>Digital Energy Meter:</strong> Monitors power consumption.</li>
+          <li class="mb-3">🔸 <strong>Fuse Indicator:</strong> Visual alert for blown fuses.</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h4 class="section-title">Achievements</h4>
+        <div class="award-badge"><i class="fas fa-trophy"></i>Integrated safety and automation in basic house wiring for practical learning.</div>
+        <h4 class="section-title">Target Audience</h4>
+        <ul class="target-audience">
+          <li><span class="bullet">🔹</span> Engineering students and instructors.</li>
+          <li><span class="bullet">🔹</span> DIY home automation enthusiasts.</li>
+          <li><span class="bullet">🔹</span> Educational labs and workshops.</li>
+          <li><span class="bullet">🔹</span> Safety trainers and inspectors.</li>
+        </ul>
+      </div>
+    </div>
+  </div></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('.skill-badge').forEach((skill, i) => setTimeout(() => skill.classList.add('visible'), i*150));
+  </script>
+</body>
+</html>

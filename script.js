@@ -64,13 +64,9 @@ const switchThemeEl = document.querySelector('input[type="checkbox"]');
 const storedTheme = localStorage.getItem("theme");
 
 // Apply stored theme on load
-if (storedTheme === "dark") {
+
   document.body.classList.add("dark");
-  switchThemeEl.checked = true;
-} else {
-  document.body.classList.add("light");
-  switchThemeEl.checked = false;
-}
+
 updateAchievementsTheme(); // Ensure Achievements section updates on page load
 
 switchThemeEl.addEventListener("click", () => {
@@ -134,7 +130,19 @@ document.querySelector("form").addEventListener("submit", function(e) {
   }).catch(error => alert("Error! Please check your internet connection."));
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const prevBtn = document.querySelector(".carousel-control-prev");
+  const nextBtn = document.querySelector(".carousel-control-next");
+  const carouselElement = document.getElementById("cardCarousel");
+  const carousel = new bootstrap.Carousel(carouselElement);
 
-// IMAGE SLIDER
+  prevBtn.addEventListener("click", function () {
+      carousel.prev();
+  });
 
-//-----------------
+  nextBtn.addEventListener("click", function () {
+      carousel.next();
+  });
+});
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Showcase - IoT Smart Distribution Board</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root { --primary-color: #1a1a1a; --secondary-color: #2d2d2d; --accent-color: #00ff88; --text-color: #ffffff; }
+    body { background: var(--primary-color); color: var(--text-color); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .project-card { background: var(--secondary-color); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem; padding: 2rem; animation: fadeInUp 0.8s ease-out; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s ease; }
+    .project-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,255,136,0.2); }
+    .carousel-item { height: 400px; background: #000; transition: opacity 0.8s ease-in-out; }
+    .carousel-item img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
+    .skill-badge { background: linear-gradient(45deg, var(--accent-color), #00ccff); color: var(--primary-color); padding: 8px 15px; margin: 5px; border-radius: 25px; font-weight: 600; opacity: 0; transform: translateY(20px); transition: all 0.4s ease; white-space: nowrap; }
+    #skills-container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .skill-badge.visible { opacity: 1; transform: translateY(0); }
+    .section-title { position: relative; margin: 2rem 0 1rem; padding-bottom: 10px; font-size: 1.5rem; }
+    .section-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 50px; height: 3px; background: linear-gradient(90deg, var(--accent-color), transparent); border-radius: 2px; }
+    .link-btn { background: rgba(255,255,255,0.1); color: var(--text-color)!important; padding: 12px 25px; margin: 8px; border-radius: 10px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; }
+    .link-btn:hover { background: var(--accent-color); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,255,136,0.3); }
+    .project-video { border-radius: 15px; overflow: hidden; border: 2px solid var(--accent-color); box-shadow: 0 0 30px rgba(0,255,136,0.1); margin: 2rem 0; }
+    .timeline-info { background: linear-gradient(45deg, rgba(0,255,136,0.1), transparent); padding: 20px; border-radius: 15px; margin: 1.5rem 0; border: 1px solid rgba(0,255,136,0.2); }
+    @media (max-width:768px) { .carousel-item { height:250px; } }
+    .title { font-size: 35px; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#" style="font-weight:800;"><span style="color:var(--accent-color);">#</span>IoT Smart Distribution Board</a>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="project-card">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div id="distCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active"><img src="https://ik.imagekit.io/ug3weuxhp/work/iesd-1.jpeg" alt="Smart Board Overview"></div>
+              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/iesd-2.jpeg?updatedAt=1747225311397" alt="Dashboard Screenshot"></div>
+              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/iesd-3.jpeg" alt="Tamper Detection Module"></div>
+              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/iesd-4.jpeg" alt="Solar/Grid Switching"></div>
+              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/iesdb-1.png" alt="Solar/Grid Switching"></div>
+              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/iesdb-2.png" alt="Solar/Grid Switching"></div>
+              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/iesdb-3.png" alt="Solar/Grid Switching"></div>
+              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/iesdb-4.png" alt="Solar/Grid Switching"></div>
+               <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/iesdb-5.png" alt="Solar/Grid Switching"></div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#distCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#distCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h2 class="display-5 title fw-bold mb-3">IoT Smart Distribution Board</h2>
+          <div class="mb-4 d-flex flex-wrap gap-2 justify-content-center" id="skills-container">
+            <span class="skill-badge">Auto Shutoff</span>
+            <span class="skill-badge">Tamper Detection</span>
+            <span class="skill-badge">Solar/Grid Switch</span>
+            <span class="skill-badge">Circuit Isolation</span>
+            <span class="skill-badge">Real-Time Dashboards</span>
+            <span class="skill-badge">Eco Impact Tracking</span>
+            <span class="skill-badge">Offline Mode</span>
+          </div>
+          <div class="timeline-info">
+            <p><i class="fas fa-rocket me-2"></i><strong>Started:</strong> January 1, 2025</p>
+            <p><i class="fas fa-flag-checkered me-2"></i><strong>Status:</strong> Beta Testing</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-video ratio ratio-16x9">
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/OPV-CjK4PEI?si=wBbwxIFuNd6pL5Wc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+
+      <div class="row g-4 mt-2">
+        <div class="col-md-6">
+          <h4 class="section-title">Why This Matters</h4>
+          <p class="lead">
+            Address energy cost spikes, aging grids, and climate challenges with an intelligent board that boosts safety, efficiency, and sustainability.
+          </p>
+          <h4 class="section-title">Key Features & Benefits</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3">🔌 <strong>Auto Shutoff:</strong> Instant disconnect and email alerts for overloads.</li>
+            <li class="mb-3">🔐 <strong>Tamper Detection:</strong> Digital lock, notifications to server & authorities.</li>
+            <li class="mb-3">☀️ <strong>Solar/Grid Switching:</strong> App-controlled, reduces bills & carbon footprint.</li>
+            <li class="mb-3">🧠 <strong>Select Circuit Isolation:</strong> Isolates only faulty circuits, uninterrupted power elsewhere.</li>
+            <li class="mb-3">📊 <strong>Real-Time Dashboards:</strong> Usage, cost, savings with PDF export.</li>
+            <li class="mb-3">🌱 <strong>Eco Impact Tracking:</strong> Visualize solar vs grid in real time.</li>
+            <li class="mb-3">📶 <strong>Offline Mode:</strong> Local data storage & automatic upload on reconnection.</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h4 class="section-title">Beyond Homes</h4>
+          <ul class="list-unstyled">
+            <li class="mb-3">✅ Instantly prevents power theft.</li>
+            <li class="mb-3">✅ Enables predictive demand management.</li>
+            <li class="mb-3">✅ Delivers precise energy where and when needed.</li>
+          </ul>
+          <h4 class="section-title">Join the Movement</h4>
+          <p class="lead">
+            Let’s collaborate on building greener, smarter grids—connect with me! 🚀
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelectorAll('.skill-badge').forEach((b,i)=>setTimeout(()=>b.classList.add('visible'), i*150));
+  </script>
+</body>
+</html>

@@ -1,817 +1,851 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
 
-    <!-- Read and update content attributes accordingly  -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
 
-    <meta
-      name="description"
-      content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations."
-    />
+  <!-- Read and update content attributes accordingly  -->
 
-    <!-- Google / Search Engine Tags -->
-<meta itemprop="name" content="Syed Mohsin's Portfolio">
-<meta itemprop="description" content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations.">
+  <meta name="description"
+    content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations." />
 
-<!-- Reference screenshot of updated site's header in place of content -->
-<meta itemprop="image" content="assets/images/sharing-card.png">
+  <!-- Google / Search Engine Tags -->
+  <meta itemprop="name" content="Syed Mohsin's Portfolio">
+  <meta itemprop="description"
+    content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations.">
 
-<!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://ossportfolio.netlify.app">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Syed Mohsin's Portfolio">
-<meta property="og:description" content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations.">
+  <!-- Reference screenshot of updated site's header in place of content -->
+  <meta itemprop="image" content="assets/images/sharing-card.png">
 
-<!-- Reference screenshot of updated site's header in content -->
-<meta property="og:image" content="assets/images/sharing-card.png">
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://ossportfolio.netlify.app">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Syed Mohsin's Portfolio">
+  <meta property="og:description"
+    content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations.">
 
-<!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Syed Mohsin's Portfolio">
-<meta name="twitter:description" content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations.">
+  <!-- Reference screenshot of updated site's header in content -->
+  <meta property="og:image" content="assets/images/sharing-card.png">
 
-<!-- Reference screenshot of updated site's header in content -->
-<meta name="twitter:image" content="assets/images/sharing-card.png">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Syed Mohsin's Portfolio">
+  <meta name="twitter:description"
+    content="Welcome to my portfolio website. I am a front-end web developer and I specialize in creating user-friendly, responsive and accessible websites. Explore my projects, open-source work and contact me for any inquiries or collaborations.">
+
+  <!-- Reference screenshot of updated site's header in content -->
+  <meta name="twitter:image" content="assets/images/sharing-card.png">
 
 
-<!-- Update favicon href attribute with image of yourself -->
-    <link
-      rel="shortcut icon"
-      href=""
-      type="image/jpg"
-    />
+  <!-- Update favicon href attribute with image of yourself -->
+  <link rel="shortcut icon" href="" type="image/jpg" />
 
-    <!-- Preloading fonts for better performance -->
+  <!-- Preloading fonts for better performance -->
 
-    <link
-      rel="preload"
-      href="assets/fonts/Mona-Sans.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
+  <link rel="preload" href="assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin />
 
-    <link rel="stylesheet" href="style.css"  />
-    <script src="script.js" defer></script>
-   
-    <!-- send mail  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <script>
-      async function trackVisitor() {
-          const ipResponse = await fetch("https://api64.ipify.org?format=json");
-           ipData = await ipResponse.json();
-          const ip = ipData.ip;
-      
-          const locationResponse = await fetch(`https://ipapi.co/${ip}/json/`);
-          const locationData = await locationResponse.json();
-          const city = locationData.city || "Unknown";
-          const country = locationData.country_name || "Unknown";
-      
-          const userAgent = encodeURIComponent(navigator.userAgent);
-          const visitTime = encodeURIComponent(new Date().toLocaleString());
-      
-          // Replace with your Google Apps Script Web App URL
-          const scriptURL = `https://script.google.com/macros/s/AKfycbwrwfjPcOudVj2LBk7J8z8lKm6f8xQgZIOWz7lXVScQNLrEiqCerjZrWBGdFmt68Bg0/exec?city=${city}&country=${country}&userAgent=${userAgent}&visitTime=${visitTime}`;
-      
-          // Send data to Google Sheet using GET request
-          //active mail
-          //fetch(scriptURL, { method: "GET", mode: "no-cors" });
-      }
-      
-      // Run silently when user visits
-      trackVisitor();
-      </script>
-      
-    <!-- ----------------- -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 
-    <!-- Your name here -->
-    <title>Darshit Vaghani's Portfolio</title>
-  </head>
+  <!-- send mail  -->
 
-  <body class="dark">
+  <script>
+    async function trackVisitor() {
+      const ipResponse = await fetch("https://api64.ipify.org?format=json");
+      ipData = await ipResponse.json();
+      const ip = ipData.ip;
 
-    <!-- <script>
-      const theme = localStorage.getItem("theme") || "dark";
-      document.body.classList.add("dark");
-    </script> -->
+      const locationResponse = await fetch(`https://ipapi.co/${ip}/json/`);
+      const locationData = await locationResponse.json();
+      const city = locationData.city || "Unknown";
+      const country = locationData.country_name || "Unknown";
 
-    <header class="header">
+      const userAgent = encodeURIComponent(navigator.userAgent);
+      const visitTime = encodeURIComponent(new Date().toLocaleString());
 
-      <div class="menu-btn-container">
-        <div class="container">
-          <button type="button"  class="menu-btn">menu</button>
-        </div>
-      </div>
+      // Replace with your Google Apps Script Web App URL
+      const scriptURL = `https://script.google.com/macros/s/AKfycbwrwfjPcOudVj2LBk7J8z8lKm6f8xQgZIOWz7lXVScQNLrEiqCerjZrWBGdFmt68Bg0/exec?city=${city}&country=${country}&userAgent=${userAgent}&visitTime=${visitTime}`;
 
-      <nav class="nav hidden">
-        <ol class="nav-items">
-          <li class="nav-item"><a href="#">Home</a></li>
-          <li class="nav-item"><a href="#work">Projects</a></li>
-          <li class="nav-item"><a href="#blog">See Blog</a></li>
-          <li class="nav-item"><a href="#skills">My Skills</a></li>
-          <li class="nav-item">
-            <a href="#contact" data-focused="last-focused">Contact</a>
-          </li>
-        </ol>
-      </nav>
+      // Send data to Google Sheet using GET request
+      //active mail
+      //fetch(scriptURL, { method: "GET", mode: "no-cors" });
+    }
 
+    // Run silently when user visits
+    trackVisitor();
+  </script>
+
+  <!-- ----------------- -->
+
+  <!-- Your name here -->
+  <title>Darshit Vaghani's Portfolio</title>
+</head>
+
+<body class="dark">
+
+  <header class="header">
+
+    <div class="menu-btn-container">
       <div class="container">
-        <div class="header-textbox">
-          <!-- Replace with your name and job title -->
-          <h1 class="h1">
-            <span>Hi, I'm Darshit Vaghani</span>
-            <span>Electrical Engineer</span>
-          </h1>
+        <button type="button" class="menu-btn">menu</button>
+      </div>
+    </div>
 
-          <!-- Add a small introductory paragraph about yourself -->
-          <p class="header-text">
-            An IoT developer and Electrical engineer passionate about designing innovative, efficient, and automation-driven hardware and software solutions. Skilled in microcontroller programming, circuit design, PCB designing, and developing IoT-integrated, user-friendly, and high-performance systems.
-          </p>
+    <nav class="nav hidden">
+      <ol class="nav-items">
+        <li class="nav-item"><a href="#">Home</a></li>
+        <li class="nav-item"><a href="#work">Projects</a></li>
+        <li class="nav-item"><a href="#blog">See Blog</a></li>
+        <li class="nav-item"><a href="#skills">My Skills</a></li>
+        <li class="nav-item">
+          <a href="#contact" data-focused="last-focused">Contact</a>
+        </li>
+      </ol>
+    </nav>
 
-          <div class="header-btns">
-            <a href="#contact" class="btn btn-cta">Hire me</a>
-            <a href="#work" class="btn btn-secondary">See my work</a>
-          </div>
+    <div class="container">
+      <div class="header-textbox">
+        <!-- Replace with your name and job title -->
+        <h1 class="h1">
+          <span class="typewriter-loop line1">Hi, I'm Darshit Vaghani</span>
+          <span class="typewriter-loop line2">Electrical Engineer</span>
+        </h1>
+        
+        
+        
+        <!-- Add a small introductory paragraph about yourself -->
+        <p class="header-text animated">
+          As an IoT developer and electrical engineer, I am dedicated to designing innovative, efficient, and automation-driven hardware and software solutions. I possess extensive expertise in microcontroller programming, circuit design, PCB layout, and the development of integrated IoT systems that are both user-friendly and high-performance.
+        </p>
+        
+
+        <div class="header-btns">
+          <a href="#contact" class="btn btn-cta">Hire me</a>
+          <a href="#work" class="btn btn-secondary" style="background-color: white; color:black;">See my work</a>
         </div>
       </div>
-    </header>
-
-    <main>
       
+    </div>
+  </header>
 
-      <section class="work">
-        <div class="container">
-          <h2 class="h2" id="work">Projects</h2>
-          <div class="work-boxes">
-            <div class="work-box">
-              <div class="work-textbox">
-                <!-- Add your project title here -->
-                <h3 class="h3">Single-Phase Induction Motor Speed Controller and AC Voltage Regulator Using Phase Angle Control</h3>
-                <!-- Add small description of your project  -->
-                <p class="work-text">
-                  A precise voltage regulation system for single-phase induction motors, using phase angle control, Triac-based switching, and a zero-crossing detector.
-                </p>
-                <!-- Add technologies you used to build the project -->
-                <ol class="work-technologies">
-                  <li>Microcontroller (Arduino/ESP32)</li>
-                  <li>Zero Crossing detector</li>
-                  <li>MOC3021 Optocoupler</li>
-                  <li>Triac</li>
-                  <li>EasyEDA</li>
-                </ol>
+  
 
-                <div class="work-links">
-                  <!-- Add url of project in href attribute -->
-                  <a href="https://www.linkedin.com/posts/darshit-vaghani-84b1a1265_powerelectronics-motorcontrol-acvoltagecontrol-activity-7272092958915510272-sRuz?utm_source=share&utm_medium=member_android&rcm=ACoAAED9UXsBv34BqWdKaZ9GB7ou6LGXpxlbb3Q" target="_blank" rel="noopener" class="link"
-                    >Explore this project</a
-                  >
+  <main style="margin-top: 20px;">
 
-                  <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
-                  <a
-                    href="https://GoogleDrive.com/devsyedmohsin"
-                    target="_blank"
-                    rel="noopener"
-                    title="Source code"
-                  >
-                    <img
-                      src="assets/images/social-links/google_drive.svg"
-                      alt="GoogleDrive"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-
-         <!-- Update img src and alt attribute  -->
-
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/speed-controll.jpg"
-                  alt="agency elevation"
-                />
-              </picture>
-            </div>
-            <div class="work-box">
-              <div class="work-textbox">
-                <!-- Add your project title here -->
-                <h3 class="h3">External Keyboard for Special Functions (Arduino & Python)</h3>
-                <!-- Add small description of your project  -->
-
-                <p class="work-text">An external keyboard interface designed for software developers and CAD users to automate key presses and control screen brightness using Arduino and Python.</p>
-                <ol class="work-technologies">  
-                  <li>Arduino,</li>
-                  <li>Python</li>
-                  <li>Serial Communication</li>
-                </ol>
-                <div class="work-links">
-                  <!-- Add url of project in href attribute -->
-                  <a href="https://drive.google.com/drive/folders/1zK5DPLFyrmlKS0Jprw_kN_joG7MvbUZ_?usp=drive_link" target="_blank" rel="noopener" class="link"
-                    >Explore this project</a
-                  >
-
-                     <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
-                  <a
-                    href="http://GoogleDrive.com/devsyedmohsin"
-                    target="_blank"
-                    rel="noopener"
-                    title="Source code"
-                  >
-                    <img
-                      src="assets/images/social-links/google_drive.svg"
-                      alt="GoogleDrive"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-         <!-- Update img src and alt attribute  -->
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/keyboard.jpg"
-                  alt="portfolio template"
-                />
-              </picture>
-            </div>
-            <div class="work-box">
-              <div class="work-textbox">
-                <!-- Add your project title here -->
-                <h3 class="h3">Class-E Chopper (Four Quadrant Motor Operation) for DC Motor Speed Control</h3>
-                <!-- Add small description of your project  -->
-                <p class="work-text">
-                  A portable DC motor controller with four-quadrant operation, offering speed and direction control with OLED display, high-rating MOSFETs, and an Atmega 328p microcontroller.
-                </p>
-                <ol class="work-technologies">
-                  <li>ATMEGA328p</li>
-                  <li>OLED Display</li>
-                  <li>MOSFETs</li>
-                  <li>EasyEDA</li>
-                </ol>
-                <div class="work-links">
-                  <!-- Add url of project in href attribute -->
-                  <a href="https://drive.google.com/drive/folders/1UzorHHDQvv4BANdi0UxarB-rRuQfeoZH?usp=drive_link" target="_blank" rel="noopener" class="link"
-                    >Explore this project</a
-                  >
-
-                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener"
-                    title="Source code"
-                  >
-                    <img
-                      src="assets/images/social-links/google_drive.svg"
-                      alt="GoogleDrive"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-         <!-- Update img src and alt attribute  -->
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/Class-E chopper.jpg"
-                  alt="contribute dev"
-                />
-              </picture>
-            </div>
-            <div class="work-box">
-              <div class="work-textbox">
-                <!-- Add your project title here -->
-                <h3 class="h3">Low-Cost Phase Changer for Voltage Stabilization</h3>
-                <!-- Add small description of your project  -->
-                <p class="work-text">
-                  A cost-effective phase changer for farmers to stabilize voltage supply and ensure consistent voltage output for single-phase equipment, preventing malfunction.
-                </p>
-                <ol class="work-technologies">
-                  <li>Op-Amp</li>
-                  <li>Phase Switching</li>
-                  <li>Relay</li>
-                  <li>EasyEDA</li>
-                </ol>
-                <div class="work-links">
-                  <!-- Add url of project in href attribute -->
-                  <a href="https://drive.google.com/drive/folders/11JN8ZHhA7RCwYGPUY2kv8kciikLtXKc2?usp=drive_link" target="_blank" rel="noopener" class="link"
-                    >Explore this project</a
-                  >
-
-                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener"
-                    title="Source code"
-                  >
-                    <img
-                      src="assets/images/social-links/google_drive.svg"
-                      alt="GoogleDrive"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-         <!-- Update img src and alt attribute  -->
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/phase-changer.jpg"
-                  alt="contribute dev"
-                />
-              </picture>
-            </div>
-            <div class="work-box">
-              <div class="work-textbox">
-                <!-- Add your project title here -->
-                <h3 class="h3">LPG Leakage Detection System with Servo-Controlled Gas Valve and Auto Cutoff</h3>
-                <!-- Add small description of your project  -->
-                <p class="work-text">
-                  A safety system for LPG leakage detection, including buzzer indication, servo-controlled gas valve, and automatic night cutoff for household and industrial use.
-                </p>
-                <ol class="work-technologies">
-                  <li>Arduino</li>
-                  <li>Servo Motor</li>
-                  <li>Gas Sensor(MQ-5)</li>
-                  <li>EasyEDA</li>
-                </ol>
-                <div class="work-links">
-                  <!-- Add url of project in href attribute -->
-                  <a href="https://drive.google.com/drive/folders/1zrSAsW2kTeSeRDjirmwS3MwcnSA635gD?usp=drive_link" target="_blank" rel="noopener" class="link"
-                    >Explore this project</a
-                  >
-
-                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener"
-                    title="Source code"
-                  >
-                    <img
-                      src="assets/images/social-links/google_drive.svg"
-                      alt="GoogleDrive"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-         <!-- Update img src and alt attribute  -->
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/LPG detection system.jpg"
-                  alt="contribute dev"
-                />
-              </picture>
-            </div>
-            <div class="work-box">
-              <div class="work-textbox">
-                <!-- Add your project title here -->
-                <h3 class="h3">AAC (Alternative and Augmentative Communication) Device for Cognitive and Speaking Disabilities</h3>
-                <!-- Add small description of your project  -->
-                <p class="work-text">
-                  An affordable, standalone AAC device for individuals with cognitive and speaking disabilities, supporting 32+ languages with customizable hardware options.
-                </p>
-                <ol class="work-technologies">
-                  <li>Microcontroller,</li>
-                  <li>LCD/LED Display</li>
-                  <li>Voltage devider base keypad</li>
-                  <li>Speech Synthesis</li>
-                  <li>EasyEDA</li>
-                </ol>
-                <div class="work-links">
-                  <!-- Add url of project in href attribute -->
-                  <a href="https://drive.google.com/drive/folders/13z-dGzDqSKJV2BbadPOTmkwdp65V9C4B?usp=drive_link" target="_blank" rel="noopener" class="link"
-                    >Explore this project</a
-                  >
-
-                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener"
-                    title="Source code"
-                  >
-                    <img
-                      src="assets/images/social-links/google_drive.svg"
-                      alt="GoogleDrive"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-         <!-- Update img src and alt attribute  -->
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/AAC.jpg"
-                  alt="contribute dev"
-                />
-              </picture>
-            </div>
-            <div class="work-box">
-              <div class="work-textbox">
-                <!-- Add your project title here -->
-                <h3 class="h3">Contact Manager Application for HR Departments (C Programming)</h3>
-                <!-- Add small description of your project  -->
-                <p class="work-text">
-                  A C language-based contact manager app designed for HR departments to efficiently manage employee data with low memory consumption and strong data security.
-                </p>
-                <ol class="work-technologies">
-                  <li>C Programming</li>
-                  <li>File Management</li>
-                </ol>
-                <div class="work-links">
-                  <!-- Add url of project in href attribute -->
-                  <a href="https://www.linkedin.com/posts/darshit-vaghani-84b1a1265_dear-connections-i-have-made-this-app-using-activity-7102126404711936001-RXkX?utm_source=share&utm_medium=member_android&rcm=ACoAAED9UXsBv34BqWdKaZ9GB7ou6LGXpxlbb3Q" target="_blank" rel="noopener" class="link"
-                    >Explore this project</a
-                  >
-
-                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener"
-                    title="Source code"
-                  >
-                    <img
-                      src="assets/images/social-links/google_drive.svg"
-                      alt="GoogleDrive"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-         <!-- Update img src and alt attribute  -->
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/contact-maneger.jpg"
-                  alt="contribute dev"
-                />
-              </picture>
-            </div>
-            <div class="work-box">
-              <div class="work-textbox">
-                <!-- Add your project title here -->
-                <h3 class="h3">Digital MCB with Overload, Short-Circuit Protection, and Auto Inverter Shift</h3>
-                <!-- Add small description of your project  -->
-                <p class="work-text">
-                  A digital MCB that provides overload protection, short-circuit prevention, current adjustability, and automatic shifting between inverter and main supply.
-                </p>
-                <ol class="work-technologies">
-                  
-                  <li>Op-Amp</li>
-                  <li>Overload Protection</li>
-                  <li>Short Circuit Detection</li>
-                  <li>shufling between inverter and mainSupply</li>
-                  <li>EasyEDA</li>
-                </ol>
-                <div class="work-links">
-                  <!-- Add url of project in href attribute -->
-                  <a href="https://drive.google.com/drive/folders/1zrrdNVbl8j2y-3H8IgpAPvW9ewISuyAb?usp=drive_link" target="_blank" rel="noopener" class="link"
-                    >Explore this project</a>
-
-                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener"
-                    title="Source code"
-                  >
-                    <img
-                      src="assets/images/social-links/google_drive.svg"
-                      alt="GoogleDrive"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-         <!-- Update img src and alt attribute  -->
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/Digital-MCB.jpg"
-                  alt="contribute dev"
-                />
-              </picture>
-            </div>
-            <div class="work-box">
-              <div class="work-textbox">
-                <!-- Add your project title here -->
-                <h3 class="h3">
-                  Blood Report Analysis Using CBC Report</h3>
-                <!-- Add small description of your project  -->
-                <p class="work-text">
-                  Developed a CBC Blood Report Analysis System using ATmega328P, where users input CBC values via a keypad. The system analyzes data and indicates potential health issues with red (alert) and green (normal) signals for easy identification.
-                </p>
-                <ol class="work-technologies">
-                  <li>ATMEGA328p</li>
-                  <li>Liquidcrystal Display</li>
-                  <li>Keypad</li>
-                </ol>
-                <div class="work-links">
-                  <!-- Add url of project in href attribute -->
-                  <a href="https://drive.google.com/drive/folders/1-60l1BqVGI3RnSqTHSkTXuCOaeRqAscc?usp=drive_link" target="_blank" rel="noopener" class="link"
-                    >Explore this project</a
-                  >
-
-                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener"
-                    title="Source code"
-                  >
-                    <img
-                      src="assets/images/social-links/google_drive.svg"
-                      alt="GoogleDrive"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-         <!-- Update img src and alt attribute  -->
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/Analysis.jpg"
-                  alt="contribute dev"
-                />
-              </picture>
-            </div>
-            <div class="work-box">
-              <div class="work-textbox">
-                <!-- Add your project title here -->
-                <h3 class="h3">COT (Clap of Thing): Intelligent Fan Speed Control with Sound Recognition</h3>
-                <!-- Add small description of your project  -->
-                <p class="work-text">
-                  I developed a unique fan speed controller using the ATTiny85 microcontroller, a microphone sensor, and a TRIAC with a capacitor for AC voltage control.
-<br> <br>
-✨ Key Features: <br>
-🔹 2 Claps → Fan speed set to 2 <br>
-🔹 3 Claps → Fan speed set to 3 <br>
-🔹 4 Claps → Activates manual mode, allowing speed adjustment via a potentiometer <br> <br>
-
-This innovative approach provides a hands-free and intuitive way to control fan speed. COT (Clap of Thing) is my own concept, combining simplicity with smart control.
-                </p>
-                <ol class="work-technologies">
-                  <li>C Programming</li>
-                  <li>ATTiny85</li>
-                  <li>TRIAC</li>
-                  <li>MIC Sensor</li>
-                </ol>
-                <div class="work-links">
-                  <!-- Add url of project in href attribute -->
-                  <a href="https://drive.google.com/drive/folders/10e9ZBTkNXLklP28yV6suH2dS_jKSD7X_?usp=drive_link" target="_blank" rel="noopener" class="link"
-                    >Explore this project</a
-                  >
-
-                   <!-- Add link to project source code in href attribute if applicable otherwise feel free to delete or comment the markup -->
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener"
-                    title="Source code"
-                  >
-                    <img
-                      src="assets/images/social-links/google_drive.svg"
-                      alt="GoogleDrive"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-         <!-- Update img src and alt attribute  -->
-              <picture class="work-img">
-                <img
-                  loading="lazy"
-                  src="assets/images/work/cot.jpg"
-                  alt="contribute dev"
-                />
-              </picture>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-
-      <!-- image slider -->
-      <div class="image_slider_box">
-  <section class="slider_container">
-    <section class="slider">
-      <div class="slide one">
-        <img src="assets/images/image_slider/1.jpg" alt="" />
-      </div>
-      <div class="slide two">
-        <img src="assets/images/image_slider/2.jpg" alt="" />
-      </div>
-      <div class="slide three">
-        <img src="assets/images/image_slider/3.jpg" alt="" />
-      </div>
-      <div class="slide four">
-        <img src="assets/images/image_slider/4.jpeg" alt="" />
-      </div>
-      <div class="slide five">
-        <img src="assets/images/image_slider/5.jpg" alt="" />
-      </div>
-      <div class="slide six">
-        <img src="assets/images/image_slider/6.jpg" alt="" />
-      </div>
-      <div class="slide seven">
-        <img src="assets/images/image_slider/7.jpg" alt="" />
-      </div>
-      <div class="slide eight">
-        <img src="assets/images/image_slider/8.png" alt="" />
-      </div>
-      <div class="slide nine">
-        <img src="assets/images/image_slider/9.png" alt="" />
-      </div>
-      <div class="slide ten">
-        <img src="assets/images/image_slider/10.jpg" alt="" />
-      </div>
-      <div class="slide eleven">
-        <img src="assets/images/image_slider/11.jpeg" alt="" />
-      </div>
-      <div class="slide twelve">
-        <img src="assets/images/image_slider/12.jpg" alt="" />
-      </div>
-      <div class="slide thirteen">
-        <img src="assets/images/image_slider/13.jpg" alt="" />
-      </div>
-      <div class="slide fourteen">
-        <img src="assets/images/image_slider/14.jpg" alt="" />
-      </div>
-      <div class="slide fifteen">
-        <img src="assets/images/image_slider/15.jpg" alt="" />
-      </div>
-      <div class="slide sixteen">
-        <img src="assets/images/image_slider/16.jpg" alt="" />
-      </div>
-      <div class="slide seventeen">
-        <img src="assets/images/image_slider/17.jpg" alt="" />
-      </div>
-      <div class="slide eighteen">
-        <img src="assets/images/image_slider/18.jpg" alt="" />
-      </div>
-    </section>
-  </section>
+    <div class="stats-container">
+  <div class="stat-box">
+    <div class="stat-number">20+</div>
+    <div class="stat-label">PROJECTS</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-number">3+</div>
+    <div class="stat-label">ARTICLES</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-number">1+<span style="font-size: 13px;"> (Waiting for major review)</span></div>
+    <div class="stat-label">PAPER PUBLICATION</div>
+  </div>
 </div>
 
+ <br><br>
+    <h2 class="h2 mt-jhj" style="margin-top: 20px;" id="blog">My Projects</h2>
+
+    <div id="cardCarousel" class="carousel slide mt-5" data-bs-ride="carousel" data-bs-interval="3000">
+      <!-- Carousel Indicators -->
+      <ol class="carousel-indicators right-align">
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="1"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="2"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="3"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="4"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="5"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="6"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="7"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="8"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="9"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="10"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="11"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="12"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="13"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="14"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="15"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="16"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="17"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="18"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="19"></li>
+        <li data-bs-target="#cardCarousel" data-bs-slide-to="20"></li>
+      </ol>
     
-
-      <!-- ------------ -->
-     
-            <section class="article">
-        <div class="container">
-          <h2 class="h2" id="blog">My Articles</h2>
-          <div class="article-boxes">
-            <article class="article-box featured-article">
-              <div class="article-textbox">
-                <div>
-                  <h3 class="h3">
-                    The Power of Charlieplexing: Efficiently Interfacing 72 Buttons with Just 9 Arduino Pins
-                  </h3>
-                  <p class="article-text">
-                    Charlieplexing is a smart technique to control multiple devices with fewer pins. Using just 9 Arduino pins, I interfaced 72 buttons, leveraging the formula n(n-1). This method optimizes pin usage by creating unique high-low states, making it perfect for compact and efficient electronics and IoT projects. 🚀✨
-                   <br>🔗 Continue reading my article on Medium 📖🔥
-                  </p>
-                </div>
-                <div class="article-info">
-                  <a href="https://medium.com/@vaghanidarshit800/charlieplexing-with-avr-interfacing-72-buttons-using-just-9-pins-of-atmega328p-9ad43a1038e7" class="link" target="_blank" rel="noopener"
-                    >Continue reading</a>
-                
-                </div>
+      <div class="carousel-inner">
+        <!-- Card 1 -->
+        <div class="carousel-item active">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/speed-controll.jpg" loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 1">
               </div>
-              <picture class="article-illustration">
-                <img
-                  src="assets/images/work/charlie_plexing.png"
-                  alt="MacBook Pro"
-                  loading="lazy"
-                />
-              </picture>
-
-              
-            </article> 
-            <article class="article-box featured-article">
-              <div class="article-textbox">
-                <div>
-                  <h3 class="h3">
-                    UART Level Shifter for Interfacing 5V and 3.3V Devices in IoT Projects
-                  </h3>
-                  <p class="article-text">
-                    🚀 Designed and implemented a UART level shifter for safe 5V to 3.3V serial communication using PC817 optocouplers, ensuring reliable interfacing between ESP8266 and PZEM-004T. ⚡ Created in EasyEDA and successfully tested for IoT applications. 🔌
-                   <br>👉 Click on "Continue Reading" to check out my full article on Medium! 📖✨"
-                  </p>
-                </div>
-                <div class="article-info">
-                  <a href="https://medium.com/@vaghanidarshit800/level-shifter-for-interfacing-5v-and-3-3v-devices-in-iot-projects-209e4096abce" class="link" target="_blank" rel="noopener"
-                    >Continue reading</a>
-                
-                </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">Single-Phase Induction Motor Speed Controller and AC Voltage Regulator Using Phase Angle Control</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  # Microcontroller #Zero Crossing detector #Optocoupler #Triac #EasyEDA
+                </p>
+                <a href="./project/project_1.html" class="a_card">View in Detail</a>
               </div>
-              <picture class="article-illustration">
-                <img
-                  src="assets/images/work/lavelSfiter.webp"
-                  alt="MacBook Pro"
-                  loading="lazy"
-                />
-              </picture>
-
-              
-            </article>
-          
-      <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  -->
-
-      <section class="skills">
-        <div class="container">
-            <h2 class="h2" id="skills">Specializations</h2>
-            <div class="skills-imgs">
-                <div class="skill-item">
-                    <img src="assets/images/work/c.jpg" alt="C" class="skills-img" loading="lazy" title="C">
-                    <p class="skill-label">C Programming</p>
-                </div>
-                <div class="skill-item">
-                    <img src="assets/images/work/python.jpg" alt="Python" class="skills-img" loading="lazy" title="Python">
-                    <p class="skill-label">Python</p>
-                </div>
-                <div class="skill-item">
-                    <img src="assets/images/work/iot.jpg" alt="IoT" class="skills-img" loading="lazy" title="IoT">
-                    <p class="skill-label">IoT Development</p>
-                </div>
-                <div class="skill-item">
-                    <img src="assets/images/work/microchip.png" alt="Microcontrollers" class="skills-img" loading="lazy" title="Microcontrollers">
-                    <p class="skill-label">Microcontrollers</p>
-                </div>
-                <div class="skill-item">
-                    <img src="assets/images/work/arduino.jpg" alt="Arduino" class="skills-img" loading="lazy" title="Arduino">
-                    <p class="skill-label">Arduino</p>
-                </div>
-                <div class="skill-item">
-                    <img src="assets/images/work/html.jpg" alt="HTML" class="skills-img" loading="lazy" title="HTML">
-                    <p class="skill-label">HTML</p>
-                </div>
-                <div class="skill-item">
-                    <img src="assets/images/work/css.jpg" alt="CSS" class="skills-img" loading="lazy" title="CSS">
-                    <p class="skill-label">CSS</p>
-                </div>
-                <div class="skill-item">
-                    <img src="assets/images/work/js.jpg" alt="JavaScript" class="skills-img" loading="lazy" title="JavaScript">
-                    <p class="skill-label">JavaScript</p>
-                </div>
-                <div class="skill-item">
-                    <img src="assets/images/work/power electronics.png" alt="Power Electronics" class="skills-img" loading="lazy" title="Power Electronics">
-                    <p class="skill-label">Power Electronics</p>
-                </div>
-                <div class="skill-item">
-                    <img src="assets/images/work/RF.png" alt="RF Technology" class="skills-img" loading="lazy" title="RF Technology">
-                    <p class="skill-label">RF Technology</p>
-                </div>
             </div>
+          </div>
         </div>
-    </section>
+    
+        <!-- Card 2 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/keyboard.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">External Keyboard for Special Functions (Arduino & Python)</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #Arduino
+                  #Python
+                  #Serial Communication
+                </p>
+                <a href="./project/project_2.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <!-- achivment section -->
+        <!-- Card 3 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/phase-changer.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">Low-Cost Phase Changer for Voltage Stabilization</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #Op-Amp
+                  #Phase Switching
+                  #Relay
+                  #EasyEDA
+                </p>
+                <a href="./project/project_4.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <section class="achievements">
-      <div class="container">
-          <h2 class="h2" id="achievements">Achievements</h2>
-          <div class="achievements-row">
-              <div class="achievement-card">
-                  <img src="assets/images/work/arduino.jpg" alt="Hackathon Winner" class="achievement-img" loading="lazy">
+        <!-- Card 4 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/LPG detection system.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">GasGuard: Smart LPG Leak Detector with Auto Shutoff</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #Arduino
+                  #Servo Motor
+                  #Gas Sensor(MQ-5)
+                  #EasyEDA
+                </p>
+                <a href="./project/project_3.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <!-- Card 5 -->
+         <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/Digital-MCB.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">SmartMCB: Overload, Short-Circuit & Auto Inverter Switch</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #Op-Amp
+                  #Overload Protection
+                  #Short Circuit Detection
+                  #shufling between inverter and mainSupply
+                  #EasyEDA
+                </p>
+                <a href="./project/project_5.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+         <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/contact-maneger.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">SmartContact: C-Based Contact Manager</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #C
+                  #File Handling
+                  #GUI
+                </p>
+                <a href="./project/project_6.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/ED-3.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">IoT-Controlled 3-Phase Inverter: Real-Time SPWM & Remote Monitoring</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #C
+                  #Power Electronics
+                  #IOT
+                </p>
+                <a href="./project/project_7.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/led-1.jpeg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">“SmartGateView 37×8: ESP32-Powered, Wi-Fi-Driven Dynamic LED Signage”</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #ESP32
+                  #C
+                  #HTML & CSS & JS
+                </p>
+                <a href="./project/project_8.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/cot-1.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">Clap Of Things: Touch-Free Home Automation by Sound</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #Arduino
+                  #C
+                  #MIC 
+                </p>
+                <a href="./project/project_9.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/cec-2.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">ChopMaster: Compact Class-E Chopper with OLED Interface</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #Arduino
+                  #MOSFET
+                  #OLED
+                  #KEYPAD 
+                </p>
+                <a href="./project/project_10.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/AAC.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">Assistive Communication Device</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #Arduino
+                  #C
+                  #Amplifire
+                  #SDcard 
+                </p>
+                <a href="./project/project_11.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/analysis.png"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">HealthCheck Pro: Portable CBC Disease Detection Unit</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #Arduino
+                  #LCD
+                  #KEYPAD 
+                </p>
+                <a href="./project/project_12.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 13 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/odc-1.png"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">SafeRover: Ultrasonic-Guided Auto-Braking Vehicle</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #Arduino
+                  #Ultrasonic
+                  #Motor driver 
+                </p>
+                <a href="./project/project_13.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 14 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/iesd-1.jpeg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">PowerShield Meter+: IoT-Based Smart Energy Meter and Distribution Board for Modern Grids</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #ESP32
+                  #PZEM004T
+                  #ELECTRONICS 
+                  #RELAY
+                </p>
+                <a href="./project/project_14.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 15 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/wd-1.jpeg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">Smart Wiring & Power Backup</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #CD4017
+                  #INVERTER
+                  #ELECTRONICS 
+                  #RELAY
+                </p>
+                <a href="./project/project_15.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 16 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/wd2-1.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">WireSmart: Modern & Traditional House Wiring Showcase</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #ATTINIY85
+                  #TRIAC
+                  #PIR 
+                  #RELAY
+                </p>
+                <a href="./project/project_16.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 17 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/cot.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">SoundWave Fan: ATTiny85-Powered Clap Control</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #ATTINIY85
+                  #TRIAC
+                  #MIC
+                </p>
+                <a href="./project/project_17.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 18 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/actodc.jpeg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">Phase-Angle Full-Wave AC-DC Converter: ESP32-Based Real-Time Control with IoT Precision</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #ESP32
+                  #MOC3021
+                  #DIODE
+                  #OPTOCOUPLER
+                </p>
+                <a href="./project/project_18.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 19 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/rtvt-9.jpeg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">Live Fleet Monitor: 4G GNSS Vehicle Tracking with Kill-Switch & Geofencing</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #ESP32
+                  #EC200U-CN
+                  #GNSS
+                  #GPS
+                </p>
+                <a href="./project/project_19.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 20 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/iot-1.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">CloudCost Automation</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #ESP32
+                  #NRF24L01
+                  #MOC3021
+                  #AVR
+                  #TRIAC
+                </p>
+                <a href="./project/project_20.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 21 -->
+        <div class="carousel-item">
+          <div class="container-fluid">
+            <div class="row align-items-center rounded shadow p-3">
+              <div class="col-md-5 col-12 p-0">
+                <img src="https://ik.imagekit.io/ug3weuxhp/work/ps-8.jpg"  loading="lazy"
+                     class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Image 2">
+              </div>
+              <div class="col-md-7 col-12 p-4">
+                <h2 class="fw-bold">Implementation of Multi-layered Cyber Security (MLCS) System in Electrical Power Network</h2>
+                <p class="text-muted" style="margin-top: 7px;">
+                  #ESP32
+                  #PZEM004T
+                  #GAS
+                  #TRIAC
+                  #RELAY
+                </p>
+                <a href="./project/project_21.html" class="a_card">View in Detail</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!-- ----------------------------------------add card above--------------------------- -->
+      </div>
+    
+      <!-- Custom Previous Button -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+    
+      <!-- Custom Next Button -->
+      <button class="carousel-control-next" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+   
+    <!-- ------------------ARTICLE SECTION--------------------------- -->
+
+<section class="carousel-container">
+  <h2 class="h2">ARTICLE</h2>
+  <button class="carousel-button carousel-button--left" id="prevBtn">&#10094;</button>
+  <div class="carousel-track" id="carouselTrack">
+
+    <!-- Slide 1 -->
+    <div class="carousel-slide">
+      <div class="article-textbox">
+        <h3>The Power of Charlieplexing: Efficiently Interfacing 72 Buttons with Just 9 Arduino Pins</h3>
+        <p>Charlieplexing is a smart technique to control multiple devices with fewer pins. Using just 9 Arduino pins, I interfaced 72 buttons, leveraging the formula n(n-1). This method optimizes pin usage by creating unique high-low states, making it perfect for compact and efficient electronics and IoT projects. 🚀✨</p>
+        <div class="article-info">
+          <a href="https://medium.com/@vaghanidarshit800/charlieplexing-with-avr-interfacing-72-buttons-using-just-9-pins-of-atmega328p-9ad43a1038e7" class="link" target="_blank" rel="noopener">Continue reading</a>
+        </div>
+      </div>
+      <div class="article-illustration">
+        <img src="https://ik.imagekit.io/ug3weuxhp/work/charlie_plexing.png" alt="Charlieplexing Illustration" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-slide">
+      <div class="article-textbox">
+        <h3>UART Level Shifter for Interfacing 5V and 3.3V Devices in IoT Projects</h3>
+        <p>🚀 Designed and implemented a UART level shifter for safe 5V to 3.3V serial communication using PC817 optocouplers, ensuring reliable interfacing between ESP8266 and PZEM-004T. ⚡ Created in EasyEDA and successfully tested for IoT applications. 🔌</p>
+        <div class="article-info">
+          <a href="https://medium.com/@vaghanidarshit800/level-shifter-for-interfacing-5v-and-3-3v-devices-in-iot-projects-209e4096abce" class="link" target="_blank" rel="noopener">Continue reading</a>
+        </div>
+      </div>
+      <div class="article-illustration">
+        <img src="https://ik.imagekit.io/ug3weuxhp/work/lavelSfiter.webp" alt="Level Shifter Illustration" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-slide">
+      <div class="article-textbox">
+        <h3>The Secret Behind That Diode Across a Relay with practical demonstration</h3>
+        <p>Placing a diode across an SPDT relay coil isn’t just a best practice—it's a secret weapon in circuit protection. When the relay switches off, the collapsing magnetic field generates a high-voltage spike. This flyback diode safely redirects that spike, protecting your microcontroller or driver circuit from damage. It's a small component with a huge impact, making it essential for reliable electronics and IoT designs. 🚀✨</p>
+        <div class="article-info">
+          <a href="https://medium.com/@vaghanidarshit800/the-secret-behind-that-diode-across-a-relay-673c6cc2952a" class="link" target="_blank" rel="noopener">Continue reading</a>
+        </div>
+      </div>
+      <div class="article-illustration">
+        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*1VLSAXV6nmo2wK22sXdJEA.jpeg" alt="Level Shifter Illustration" loading="lazy" />
+      </div>
+    </div>
+
+
+  </div>
+  <button class="carousel-button carousel-button--right" id="nextBtn">&#10095;</button>
+</section>
+
+
+          <!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  -->
+
+          <section class="skills">
+            <div class="container">
+              <h2 class="h2" id="skills">Specializations</h2>
+              <div class="skills-imgs">
+                <div class="skill-item">
+                  <img src="assets/images/work/c.jpg" alt="C" class="skills-img" loading="lazy" title="C">
+                  <p class="skill-label">C Programming</p>
+                </div>
+                <div class="skill-item">
+                  <img src="assets/images/work/python.jpg" alt="Python" class="skills-img" loading="lazy"
+                    title="Python">
+                  <p class="skill-label">Python</p>
+                </div>
+                <div class="skill-item">
+                  <img src="assets/images/work/iot.jpg" alt="IoT" class="skills-img" loading="lazy" title="IoT">
+                  <p class="skill-label">IoT Development</p>
+                </div>
+                <div class="skill-item">
+                  <img src="assets/images/work/microchip.png" alt="Microcontrollers" class="skills-img" loading="lazy"
+                    title="Microcontrollers">
+                  <p class="skill-label">Microcontrollers</p>
+                </div>
+                <div class="skill-item">
+                  <img src="assets/images/work/arduino.jpg" alt="Arduino" class="skills-img" loading="lazy"
+                    title="Arduino">
+                  <p class="skill-label">Arduino</p>
+                </div>
+                <div class="skill-item">
+                  <img src="assets/images/work/html.jpg" alt="HTML" class="skills-img" loading="lazy" title="HTML">
+                  <p class="skill-label">HTML</p>
+                </div>
+                <div class="skill-item">
+                  <img src="assets/images/work/css.jpg" alt="CSS" class="skills-img" loading="lazy" title="CSS">
+                  <p class="skill-label">CSS</p>
+                </div>
+                <div class="skill-item">
+                  <img src="assets/images/work/js.jpg" alt="JavaScript" class="skills-img" loading="lazy"
+                    title="JavaScript">
+                  <p class="skill-label">JavaScript</p>
+                </div>
+                <div class="skill-item">
+                  <img src="assets/images/work/power electronics.png" alt="Power Electronics" class="skills-img"
+                    loading="lazy" title="Power Electronics">
+                  <p class="skill-label">Power Electronics</p>
+                </div>
+                <div class="skill-item">
+                  <img src="assets/images/work/RF.png" alt="RF Technology" class="skills-img" loading="lazy"
+                    title="RF Technology">
+                  <p class="skill-label">RF Technology</p>
+                </div>
+                <div class="skill-item">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/nodejs.png" alt="RF Technology" class="skills-img" loading="lazy"
+                    title="RF Technology">
+                  <p class="skill-label">Node JS</p>
+                </div>
+                <div class="skill-item">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/express.png" alt="RF Technology" class="skills-img" loading="lazy"
+                    title="RF Technology">
+                  <p class="skill-label">Express JS</p>
+                </div>
+                <div class="skill-item">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/mongo-db.png" alt="RF Technology" class="skills-img" loading="lazy"
+                    title="RF Technology">
+                  <p class="skill-label">Mongo-db</p>
+                </div>
+                <div class="skill-item">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/gas.png" alt="RF Technology" class="skills-img" loading="lazy"
+                    title="RF Technology">
+                  <p class="skill-label">Google App Script</p>
+                </div>
+                <div class="skill-item">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/tkinter.webp" alt="RF Technology" class="skills-img" loading="lazy"
+                    title="RF Technology">
+                  <p class="skill-label">Tkinter</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- achivment section -->
+
+          <section class="achievements">
+            <div class="container">
+              <h2 class="h2" id="achievements">Achievements</h2>
+              <div class="achievements-row">
+                <div class="achievement-card">
+                  <img src="assets/images/work/arduino.jpg" alt="Hackathon Winner" class="achievement-img"
+                    loading="lazy">
                   <h3 class="achievement-title">Hackathon Winner</h3>
                   <p class="achievement-desc">Won a national-level Arduino Hackathon at Lakshya Tech Fest, LDCE</p>
                   <a href="#" class="link_card">Click To More</a>
-              </div>
-              <div class="achievement-card">
-                  <img src="assets/images/work/ideathon.png" alt="IEEE Certification" class="achievement-img" loading="lazy">
+                </div>
+                <div class="achievement-card">
+                  <img src="assets/images/work/ideathon.png" alt="IEEE Certification" class="achievement-img"
+                    loading="lazy">
                   <h3 class="achievement-title">Hackathon Winner</h3>
-                  <p class="achievement-desc">Won the National Level Gandhian Ideathon 5th Edition, organized by Auro University.</p>
+                  <p class="achievement-desc">Won the National Level Gandhian Ideathon 5th Edition, organized by Auro
+                    University.</p>
                   <a href="#" class="link_card">Click To More</a>
-              </div>
-              <div class="achievement-card">
-                <img src="assets/images/work/hakathon.jpeg" alt="Patent Filed" class="achievement-img" loading="lazy">
-                <h3 class="achievement-title">Hackathon Winner</h3>
-                <p class="achievement-desc">Won CVMU National-Level Hackathon.</p>
-                <a href="#" class="link_card">Click To More</a>
-            </div>
-              
-          </div>
-          <div class="achievements-row">
-            <div class="achievement-card">
-              <img src="assets/images/work/award.jpg" alt="Innovation Award" class="achievement-img" loading="lazy">
-              <h3 class="achievement-title">Innovation Award</h3>
-              <p class="achievement-desc">Honored to receive the i-SCALE Award 2025 from GTU for our contributions to the startup ecosystem with SWAR! </p>
-              <a href="#" class="link_card">Click To More</a>
-            </div>
+                </div>
+                <div class="achievement-card">
+                  <img src="assets/images/work/hakathon.jpeg" alt="Patent Filed" class="achievement-img" loading="lazy">
+                  <h3 class="achievement-title">Hackathon Winner</h3>
+                  <p class="achievement-desc">Won CVMU National-Level Hackathon.</p>
+                  <a href="#" class="link_card">Click To More</a>
+                </div>
 
-              <!-- <div class="achievement-card">
+              </div>
+              <div class="achievements-row">
+                <div class="achievement-card">
+                  <img src="assets/images/work/award.jpg" alt="Innovation Award" class="achievement-img" loading="lazy">
+                  <h3 class="achievement-title">Innovation Award</h3>
+                  <p class="achievement-desc">Honored to receive the i-SCALE Award 2025 from GTU for our contributions
+                    to the startup ecosystem with SWAR! </p>
+                  <a href="#" class="link_card">Click To More</a>
+                </div>
+
+                
+                <div class="achievement-card">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/ssip.png" alt="Innovation Award" class="achievement-img" loading="lazy">
+                  <h3 class="achievement-title">SSIP</h3>
+                  <p class="achievement-desc">Honored to receive ₹60,000 SSIP funding for CloudCost Automation from LDCE for our innovation in
+cost-effective, cloud-free IoT automation solutions! 💡🚀</p>
+                  <a href="#" class="link_card">Click To More</a>
+                </div>
+
+                
+                <div class="achievement-card">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/ssip.png" alt="Innovation Award" class="achievement-img" loading="lazy">
+                  <h3 class="achievement-title">SSIP</h3>
+                  <p class="achievement-desc">Honored to receive ₹1,20,000 SSIP funding for Team SWAR from LDCE for our impactful work on the AAC device empowering speech-disabled individuals! 🗣️💙🚀</p>
+                  <a href="#" class="link_card">Click To More</a>
+                </div>
+
+
+                <!-- <div class="achievement-card">
                   <img src="assets/images/achievements/conference.jpg" alt="Tech Conference Speaker" class="achievement-img" loading="lazy">
                   <h3 class="achievement-title">Tech Conference Speaker</h3>
                   <p class="achievement-desc">Delivered a talk on Industry 4.0 at a prestigious tech event.</p>
@@ -823,219 +857,216 @@ This innovative approach provides a hands-free and intuitive way to control fan 
                   <p class="achievement-desc">Founded an IoT-based startup focusing on smart automation.</p>
                   <a href="#" class="link_card">Click To More</a>
               </div> -->
-          </div>
-          
-          <!-- Click for More Content Link (Below All Cards) -->
-      </div>
-  </section>
-
-  <!-- POSITION -->
-  <div class="center-heading">
-    <h2 class="h2" id="achievements">Experience</h2>
-</div>
-
-  <div class="positions-container">
-   
-    <div class="position-box">
-        <div class="circle">
-            <img src="assets/images/work/iei.jpg" alt="Profile Image">
-        </div>
-        <div class="rectangle">
-            <h3>Technical Team Manager</h3>
-            <p>The Institution of Engineers (India)</p>
-        </div>
-    </div>
-
-    <div class="position-box">
-        <div class="circle">
-            <img src="assets/images/work/bis.jpg" alt="Profile Image">
-        </div>
-        <div class="rectangle">
-            <h3>Core Member of BIS Club</h3>
-            <p class="position_label">BIS Club BMSIT</p>
-        </div>
-    </div>
-
-    <div class="position-box">
-        <div class="circle">
-            <img src="assets/images/work/triveni.jpg" alt="Profile Image">
-        </div>
-        <div class="rectangle">
-            <h3>Management Team</h3>
-            <p>Managing the Arduino Hackathon at LDCE Fest Triveni 2024</p>
-        </div>
-    </div>
-</div>
-
-
-  <!-- /////////// -->
-  
-    
-
-      <!-- Replace testimonials, author name, author job, img src and, alt attributes -->
-
-      <section>
-        <h2 class="h2">Media & Press Coverage</h2>
-        <section class="media-press">
-          <div class="media-container">
-              <div class="image-box">
-                  <img src="assets/images/work/swar.jpeg" alt="Media Image">
               </div>
-              <div class="content-box">
-                  <h2>Swar-A Voice for the Voiceless</h2>
-                  <p>Our AAC device, Swar, empowers specially-abled individuals with customizable icons, multi-language support, and a vast 1.5 lakh phrase memory for seamless communication. Grateful to Gujarat Samachar for recognizing our innovation and impact!</p>
-                  <a href="#" class="read-more">Click to More</a>
-              </div>
-          </div>
-      </section>
-          
-      </section>
 
-<!-- ---------------------c animation------------------ -->
-
-<div class="c-graphics-section">
-  <h2>C Graphics Experiments – Where Logic Meets Creativity!</h2>
-  <p>
-    I love experimenting with C language graphics. These animations are a result of my passion for logic building, graphics programming, and exploring the creative side of C—while enjoying every moment with it! 🚀
-  </p>
-
-  <div class="c-graphics-container">
-      <div class="c-graphics-card">
-          <img src="assets/images/work/ch3.png" alt="Turbo C++ Animation 1">
-          <h3 class="gap">A Tribute to ISRO 🚀</h3>
-          <p class="gap">A celebratory animation for Chandrayaan 3’s successful landing, congratulating ISRO with dynamic C graphics!</p>
-          <a href="https://drive.google.com/file/d/1M66phd7qfd8w1e313E3C4SAThRd3xFDj/view?usp=drive_link" target="_blank" class="watch-btn">Watch Animation</a>
-      </div>
-
-      <div class="c-graphics-card">
-          <img src="assets/images/work/t.png" alt="Turbo C++ Animation 2">
-          <h3 class="gap">A Divine Celebration 🛕</h3>
-          <p class="gap">An animation celebrating the inauguration of the Ram Mandir, bringing its divine presence to life with C graphics!</p>
-          <a href="https://drive.google.com/file/d/1w6DYZTjQ4pxt5qXmYdp0qui54iaEsCmY/view?usp=drive_link" target="_blank" class="watch-btn">Watch Animation</a>
-      </div>
-
-      <div class="c-graphics-card">
-          <img src="assets/images/work/kite.png" alt="Turbo C++ Animation 3">
-          <h3 class="gap">Soaring High with Wishes 🪁</h3>
-          <p class="gap">A festive animation sending joyful wishes for Makar Sankranti, featuring vibrant kites and celebrations!"</p>
-          <a href="https://drive.google.com/file/d/1IBAeUyuG4ANhMSiUysThBnQgi7KT90dx/view?usp=drive_link" target="_blank" class="watch-btn">Watch Animation</a>
-      </div>
-
-      <div class="c-graphics-card">
-          <img src="assets/images/work/holi.png" alt="Turbo C++ Animation 4">
-          <h3 class="gap">Colors of Joy in Motion 🎨</h3>
-          <p class="gap">A colorful animation celebrating the spirit of Holi with vibrant splashes and festive joy!</p>
-          <a href="https://drive.google.com/file/d/1ftoQsO9d0mrfeRysnhau_nvvSTyLkBpE/view?usp=drive_link" target="_blank" class="watch-btn">Watch Animation</a>
-      </div>
-
-      <div class="c-graphics-card">
-          <img src="assets/images/work/nature.png" alt="Turbo C++ Animation 5">
-          <h3 class="gap">A Heartfelt Expression 🌧️</h3>
-          <p class="gap">A soothing monsoon animation capturing the joy of the first rain, expressing my feelings in a unique way.</p>
-          <a href="https://drive.google.com/file/d/1dZxRIh8IJ6NwsBRIw4MGTBDkOSv1HJgy/view?usp=drive_link" target="_blank" class="watch-btn">Watch Animation</a>
-      </div>
-  </div>
-</div>
-
-
-<!-- ----------------------------------------------------------------------- -->
-
-
-      <section class="contact">
-        <div class="container">
-          <h2 class="h2" id="contact">Send Message</h2>
-          <div class="contact-content">
-            <div class="contact-textbox">
-              <!-- Please comment this component if you're not available for hire -->
-              <strong href="#" class="hire-alert">
-                <span class="indicator"></span>
-                Available for hire
-              </strong>
-              <p class="contact-text">
-                As an IoT developer and electronics engineer, I design and build innovative hardware systems, integrating microcontrollers, circuits, and automation solutions with a focus on efficiency and real-world applications. I enjoy creating projects from scratch, bringing ideas to life through hands-on experimentation and precise engineering.
-                In my spare time, I explore emerging technologies like AI-powered IoT, Edge Computing, and Industry 4.0, constantly pushing the boundaries of what's possible in electronics and automation.      
-              </p>
-              <p class="contact-text">
-                As an IoT developer, I'm passionate about open-source development. In my spare time, I enjoy designing interesting circuits, blending my creativity with technology to build innovative solutions.
-              </p>
-              <!-- Replace src with your signatures and name -->
-              <img
-                src="assets/images/signatures.png"
-                alt="Syed Mohsin"
-                class="signatures"
-                loading="lazy"
-              />
+              <!-- Click for More Content Link (Below All Cards) -->
             </div>
-            <form action="https://formspree.io/f/xgvobwza" method="POST">
-              <div class="form-field">
-                  <label for="name">Name</label>
-                  <input type="text" name="name" id="name" required />
+          </section>
+
+          <!-- POSITION -->
+          <div class="center-heading">
+            <h2 class="h2" id="achievements">Experience</h2>
+          </div>
+
+          <div class="positions-container">
+
+            <div class="position-box">
+              <div class="circle">
+                <img src="assets/images/work/iei.jpg" alt="Profile Image">
               </div>
-              <div class="form-field">
-                  <label for="email">Email</label>
-                  <input type="email" name="email" id="email" required inputmode="email" />
+              <div class="rectangle">
+                <h3>Technical Team Manager</h3>
+                <p>The Institution of Engineers (India)</p>
               </div>
-              <div class="form-field">
-                  <label for="message">How can I help you?</label>
-                  <textarea name="message" id="message" required></textarea>
+            </div>
+
+            <div class="position-box">
+              <div class="circle">
+                <img src="assets/images/work/bis.jpg" alt="Profile Image">
               </div>
-              <button type="submit" class="btn btn-cta">Send</button>
-          </form>
-          
+              <div class="rectangle">
+                <h3>Core Member of BIS Club</h3>
+                <p class="position_label">BIS Club BMSIT</p>
+              </div>
+            </div>
+
+            <div class="position-box">
+              <div class="circle">
+                <img src="assets/images/work/triveni.jpg" alt="Profile Image">
+              </div>
+              <div class="rectangle">
+                <h3>Management Team</h3>
+                <p>Managing the Arduino Hackathon at LDCE Fest Triveni 2024</p>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- /////////// -->
+
+
+          <section id="top-video" style="background-color: #0d0d0d; padding: 60px 20px; color: white; text-align: center;">
+  <h2 style="font-size: 2rem; margin-bottom: 20px;">🎬 My Spotlight Moment</h2>
+  <div style="max-width: 800px; margin: 0 auto; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 0 20px rgba(255,255,255,0.1);">
+    <iframe id="ytVideo" 
+            src="https://www.youtube.com/embed/OPV-CjK4PEI?si=wBbwxIFuNd6pL5Wc" 
+            title="YouTube video player"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen 
+            style="position: absolute; top:0; left: 0; width: 100%; height: 100%;">
+    </iframe>
+  </div>
+</section>
+
+
+
+          <!-- Replace testimonials, author name, author job, img src and, alt attributes -->
+
+         <section>
+  <h2 class="h2">Media & Press Coverage</h2>
+  <section class="carousel-container media-carousel">
+    <button class="carousel-button-media carousel-button--left" id="mediaPrevBtn">&#10094;</button>
+    
+    <div class="carousel-track" id="mediaCarouselTrack">
+      <!-- Slide 1 -->
+      <div class="carousel-slide">
+        <div class="media-container">
+          <div class="image-box">
+            <img src="assets/images/work/swar.jpeg" alt="Swar Media">
+          </div>
+          <div class="content-box">
+            <h2>Swar - A Voice for the Voiceless</h2>
+            <p>Our AAC device, Swar, empowers specially-abled individuals with customizable icons, multi-language support, and a vast 1.5 lakh phrase memory. Grateful to Gujarat Samachar for recognizing our innovation!</p>
+            <a href="#" class="read-more">Click to More</a>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
 
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <!-- Update href and src attributes -->
-          <nav>
-            <ol class="footer-links">
-              <li class="footer-link">
-                <a title="GoogleDrive" href="#" target="_blank" rel="noopener"
-                  ><img
-                    loading="lazy"
-                    src="assets/images/social-links/google_drive.svg"
-                    alt="GoogleDrive"
-                /></a>
-              </li>
-              <li class="footer-link">
-                <a title="Codepen" href="https://github.com/Darshit-Vaghani" target="_blank" rel="noopener"
-                  ><img
-                    loading="lazy"
-                    src="assets/images/social-links/github.svg"
-                    alt="Codepen"
-                /></a>
-              </li>
-              <li class="footer-link">
-                <a title="Linkedin" href="https://www.linkedin.com/in/darshit-vaghani-84b1a1265?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener"
-                  ><img
-                    loading="lazy"
-                    src="assets/images/social-links/linkedin.svg"
-                    alt="Linkedin"
-                /></a>
-              </li>
-              <li class="footer-link">
-                <a title="Twitter" href="#" target="_blank" rel="noopener"
-                  ><img
-                    loading="lazy"
-                    src="assets/images/social-links/twitter.svg"
-                    alt="Twitter"
-                /></a>
-              </li>
-            </ol>
-          </nav>
-          <p class="footer-text">
-            Er. Darshit Vaghani <br> B.E. - Electrical Engineer <br> L.D. College of Engineering, Ahmedabad
-          </p>
-          <!-- <label class="theme-switch" for="theme-switch">
+      <!-- Slide 2 -->
+      <div class="carousel-slide">
+        <div class="media-container">
+          <div class="image-box">
+            <img src="assets/images/work/RTVT.jpeg" alt="RTVT Media">
+          </div>
+          <div class="content-box">
+            <h2>TrackIt: Real-Time Vehicle Tracker</h2>
+            <p>TrackIt ensures real-time vehicle monitoring with GPS, remote engine control, and theft protection. A scalable solution for both personal and government use. Thank you Gujarat Samachar!</p>
+            <a href="#" class="read-more">Click to More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-button-media carousel-button--right" id="mediaNextBtn">&#10095;</button>
+  </section>
+</section>
+
+
+          <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<!-- Popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<!-- Bootstrap 4 JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+          <!-- ---------------------c animation------------------ -->
+
+         
+          
+          <!-- ----------------------------------------------------------------------- -->
+
+
+          <section class="contact">
+            <div class="container">
+              <h2 class="h2" id="contact">Send Message</h2>
+              <div class="contact-content">
+                <div class="contact-textbox">
+                  <!-- Please comment this component if you're not available for hire -->
+                  <strong href="#" class="hire-alert">
+                    <span class="indicator"></span>
+                    Available for hire
+                  </strong>
+                  <p class="contact-text">
+                    As an IoT developer and electronics engineer, I design and build innovative hardware systems,
+                    integrating microcontrollers, circuits, and automation solutions with a focus on efficiency and
+                    real-world applications. I enjoy creating projects from scratch, bringing ideas to life through
+                    hands-on experimentation and precise engineering.
+                    In my spare time, I explore emerging technologies like AI-powered IoT, Edge Computing, and Industry
+                    4.0, constantly pushing the boundaries of what's possible in electronics and automation.
+                  </p>
+                  <p class="contact-text">
+                    As an IoT developer, I'm passionate about open-source development. In my spare time, I enjoy
+                    designing interesting circuits, blending my creativity with technology to build innovative
+                    solutions.
+                  </p>
+                  <!-- Replace src with your signatures and name -->
+                  <img src="assets/images/signatures.png" alt="Syed Mohsin" class="signatures" loading="lazy" />
+                </div>
+                <form action="https://formspree.io/f/xgvobwza" method="POST">
+                  <div class="form-field">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required inputmode="email" />
+                  </div>
+                  <div class="form-field">
+                    <label for="message">How can I help you?</label>
+                    <textarea name="message" id="message" required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-cta">Send</button>
+                </form>
+
+              </div>
+            </div>
+          </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Update href and src attributes -->
+        <nav>
+          <ol class="footer-links">
+            <li class="footer-link">
+              <a title="GoogleDrive" href="#" target="_blank" rel="noopener"><img loading="lazy"
+                  src="assets/images/social-links/google_drive.svg" alt="GoogleDrive" /></a>
+            </li>
+            <li class="footer-link">
+              <a title="Codepen" href="https://github.com/Darshit-Vaghani" target="_blank" rel="noopener"><img
+                  loading="lazy" src="assets/images/social-links/github.svg" alt="Codepen" /></a>
+            </li>
+            <li class="footer-link">
+              <a title="Linkedin"
+                href="https://www.linkedin.com/in/darshit-vaghani-84b1a1265?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank" rel="noopener"><img loading="lazy" src="assets/images/social-links/linkedin.svg"
+                  alt="Linkedin" /></a>
+            </li>
+            <li class="footer-link">
+              <a title="Twitter" href="#" target="_blank" rel="noopener"><img loading="lazy"
+                  src="assets/images/social-links/twitter.svg" alt="Twitter" /></a>
+            </li>
+          </ol>
+        </nav>
+        <p class="footer-text">
+          Er. Darshit Vaghani <br> B.E. - Electrical Engineer <br> L.D. College of Engineering, Ahmedabad
+        </p>
+        <!-- <label class="theme-switch" for="theme-switch">
             <span>Dark Theme</span>
             <input type="checkbox" id="theme-switch" role="switch"/>
           </label> -->
-        </div>
       </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+
+  <script src="Article.js"></script>
+  <script src="media.js"></script>
+  <script src="highlights.js"></script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </html>
