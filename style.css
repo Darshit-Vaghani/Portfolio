@@ -1032,43 +1032,40 @@ body.dark .work-links img {
   gap: var(--gutter-nano);
   font-size: initial;
 }
-
-@media (max-width: 985px) {
-  .article-boxes {
-    max-inline-size: 685px;
-    margin-inline: auto;
-    justify-content: center;
-    gap: 4%;
-  }
-
-  .article-box:nth-of-type(2),
-  .article-box:nth-of-type(3) {
-    flex-basis: 48%;
-  }
-
-  .article-box:last-child {
-    display: none;
-  }
-}
-
+/* ------------------article-------- */
 @media (max-width: 650px) {
-
-  .article-box:nth-child(2),
-  .article-box:nth-child(3),
-  .article-box:last-child {
-    flex-basis: 100%;
+  /* Stack slide contents vertically */
+  .carousel-slide {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
   }
 
-  .featured-article {
-    margin-block-end: 0;
+  /* Make illustration full width and on top */
+  .carousel-slide .article-illustration {
+    order: 1;
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
-  .article-box:not(:last-child) {
-    margin-block-end: var(--gutter-x-small);
+  /* Then the text */
+  .carousel-slide .article-textbox {
+    order: 2;
+    width: 100%;
   }
 
-  .article-box:last-child {
-    display: block;
+  /* Ensure images scale down nicely */
+  .carousel-slide .article-illustration img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Shrink buttons if needed */
+  .carousel-button {
+    font-size: 1.5rem;
+    padding: 0.25rem 0.5rem;
   }
 }
 
@@ -2349,3 +2346,4 @@ input:checked {
 .carousel-button--right {
   right: 10px;
 }
+
