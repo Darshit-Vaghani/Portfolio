@@ -1641,6 +1641,10 @@ input:checked {
   .read-more {
     align-self: center;
   }
+  .carousel-button-media {
+    visibility: hidden;
+  }
+
 }
 
 
