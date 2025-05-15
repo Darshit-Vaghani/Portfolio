@@ -618,7 +618,7 @@ main {
   /* background-color: #ff5e99; */
   /* background-image: var(--gradient-brand); */
   /* background: linear-gradient(135deg, #0F2027, #203A43, #2C5364); */
-  background-image: url("assets/images/work/background.jpg");
+  background-image: url("https://ik.imagekit.io/ug3weuxhp/work/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   transition: 450ms var(--easing);
@@ -2199,10 +2199,11 @@ input:checked {
     margin-right: 5px;
   }
 
-.carousel-indicators li {
+/* .carousel-indicators li { */
+
   /* width: 25px; */
   /* change width for changing the width os indicator line */
-}
+/* } */
 
   /* --------------------------- */
 .stats-container {
