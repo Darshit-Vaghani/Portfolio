@@ -45,14 +45,13 @@
 
   <!-- Preloading fonts for better performance -->
 
-  <link rel="preload" href="assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin>
+
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-
   <!-- send mail  -->
 
   <script>
@@ -154,7 +153,7 @@
 </div>
 
  <br><br>
-    <h2 class="h2 mt-jhj" style="margin-top: 20px;" id="blog">My Projects</h2>
+    <h2 class="h2 mt-jhj" style="margin-top: 20px;" id="work">My Projects</h2>
 
     <div id="cardCarousel" class="carousel slide mt-5" data-bs-ride="carousel" data-bs-interval="3000">
       <!-- Carousel Indicators -->
@@ -662,9 +661,6 @@
 
     <!-- Slide 1 -->
     <div class="carousel-slide">
-<div class="article-illustration">
-        <img src="https://ik.imagekit.io/ug3weuxhp/work/charlie_plexing.png" alt="Charlieplexing Illustration"  />
-      </div>
       <div class="article-textbox">
         <h3>The Power of Charlieplexing: Efficiently Interfacing 72 Buttons with Just 9 Arduino Pins</h3>
         <p>Charlieplexing is a smart technique to control multiple devices with fewer pins. Using just 9 Arduino pins, I interfaced 72 buttons, leveraging the formula n(n-1). This method optimizes pin usage by creating unique high-low states, making it perfect for compact and efficient electronics and IoT projects. 🚀✨</p>
@@ -672,14 +668,13 @@
           <a href="https://medium.com/@vaghanidarshit800/charlieplexing-with-avr-interfacing-72-buttons-using-just-9-pins-of-atmega328p-9ad43a1038e7" class="link" target="_blank" rel="noopener">Continue reading</a>
         </div>
       </div>
-      
+      <div class="article-illustration">
+        <img src="https://ik.imagekit.io/ug3weuxhp/work/charlie_plexing.png" alt="Charlieplexing Illustration"  />
+      </div>
     </div>
 
     <!-- Slide 2 -->
     <div class="carousel-slide">
-<div class="article-illustration">
-        <img src="https://ik.imagekit.io/ug3weuxhp/work/lavelSfiter.webp" alt="Level Shifter Illustration"  />
-      </div>
       <div class="article-textbox">
         <h3>UART Level Shifter for Interfacing 5V and 3.3V Devices in IoT Projects</h3>
         <p>🚀 Designed and implemented a UART level shifter for safe 5V to 3.3V serial communication using PC817 optocouplers, ensuring reliable interfacing between ESP8266 and PZEM-004T. ⚡ Created in EasyEDA and successfully tested for IoT applications. 🔌</p>
@@ -687,14 +682,13 @@
           <a href="https://medium.com/@vaghanidarshit800/level-shifter-for-interfacing-5v-and-3-3v-devices-in-iot-projects-209e4096abce" class="link" target="_blank" rel="noopener">Continue reading</a>
         </div>
       </div>
-      
+      <div class="article-illustration">
+        <img src="https://ik.imagekit.io/ug3weuxhp/work/lavelSfiter.webp" alt="Level Shifter Illustration"  />
+      </div>
     </div>
 
     <!-- Slide 3 -->
     <div class="carousel-slide">
- <div class="article-illustration">
-        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*1VLSAXV6nmo2wK22sXdJEA.jpeg" alt="Level Shifter Illustration"  />
-      </div>
       <div class="article-textbox">
         <h3>The Secret Behind That Diode Across a Relay with practical demonstration</h3>
         <p>Placing a diode across an SPDT relay coil isn’t just a best practice—it's a secret weapon in circuit protection. When the relay switches off, the collapsing magnetic field generates a high-voltage spike. This flyback diode safely redirects that spike, protecting your microcontroller or driver circuit from damage. It's a small component with a huge impact, making it essential for reliable electronics and IoT designs. 🚀✨</p>
@@ -702,7 +696,9 @@
           <a href="https://medium.com/@vaghanidarshit800/the-secret-behind-that-diode-across-a-relay-673c6cc2952a" class="link" target="_blank" rel="noopener">Continue reading</a>
         </div>
       </div>
-     
+      <div class="article-illustration">
+        <img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*1VLSAXV6nmo2wK22sXdJEA.jpeg" alt="Level Shifter Illustration"  />
+      </div>
     </div>
 
 
@@ -1068,6 +1064,8 @@ cost-effective, cloud-free IoT automation solutions! 💡🚀</p>
   <script src="Article.js"></script>
   <script src="media.js"></script>
   <script src="highlights.js"></script>
+  <script src="script.js"></script>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
