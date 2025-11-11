@@ -3,168 +3,231 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Showcase - Contact Manager Application</title>
+  <title>Contact Manager Application | C Programming & Data Structures</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-color: #1a1a1a;
-      --secondary-color: #2d2d2d;
-      --accent-color: #00ff88;
-      --text-color: #ffffff;
+      --primary-bg: #0f172a; --secondary-bg: #1e293b; --card-bg: #1e293b; --text-primary: #f8fafc; --text-secondary: #cbd5e1;
+      --accent-blue: #3b82f6; --accent-green: #10b981; --accent-purple: #8b5cf6; --border-color: #334155; --shadow-color: rgba(0,0,0,0.3);
+      --card-shadow: 0 4px 20px rgba(0,0,0,0.25);
     }
-    body {
-      background-color: var(--primary-color);
-      color: var(--text-color);
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
+    [data-theme="light"] {
+      --primary-bg: #f8fafc; --secondary-bg: #ffffff; --card-bg: #ffffff; --text-primary: #1e293b; --text-secondary: #64748b;
+      --border-color: #e2e8f0; --shadow-color: rgba(0,0,0,0.08); --card-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .project-card {
-      background: var(--secondary-color);
-      border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: transform 0.3s ease;
-      margin-bottom: 2rem;
-      animation: fadeInUp 0.8s ease-out;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    }
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(0,255,136,0.2);
-    }
-    .carousel-item { transition: opacity 0.8s ease-in-out; height: 400px; background: #000; }
-    .carousel-item img { object-fit: cover; height:100%; width:100%; border-radius:15px; }
-    .skill-badge {
-      background: linear-gradient(45deg, var(--accent-color), #00ccff);
-      color: var(--primary-color);
-      margin:5px; padding:8px 15px; border-radius:25px;
-      font-weight:600; opacity:0; transform:translateY(20px);
-      transition: all 0.4s ease; white-space:nowrap;
-    }
-    .skill-badge.visible { opacity:1; transform:translateY(0); }
+    * { margin:0; padding:0; box-sizing:border-box; transition:background 0.3s,color 0.3s,border 0.3s; }
+    body { background:var(--primary-bg); color:var(--text-primary); font-family:'Poppins',sans-serif; overflow-x:hidden; line-height:1.6; }
+    .mono-font { font-family:'Roboto Mono',monospace; }
+    .navbar { background:var(--secondary-bg); box-shadow:0 2px 10px var(--shadow-color); padding:1rem 0; position:fixed; width:100%; top:0; z-index:1000; border-bottom:1px solid var(--border-color); }
+    .navbar.scrolled { box-shadow:0 5px 20px var(--shadow-color); }
+    .navbar-brand { font-weight:700; font-size:1.25rem; color:var(--text-primary); }
+    .theme-toggle { background:var(--card-bg); border:1px solid var(--border-color); border-radius:50px; padding:5px; display:flex; align-items:center; cursor:pointer; width:60px; height:30px; position:relative; }
+    .theme-toggle i { font-size:14px; position:absolute; transition:0.3s; }
+    .fa-sun { left:8px; color:#f59e0b; } .fa-moon { right:8px; color:#cbd5e1; }
+    .theme-toggle-ball { position:absolute; width:22px; height:22px; background:var(--accent-blue); border-radius:50%; transition:transform 0.3s; z-index:1; }
+    [data-theme="light"] .theme-toggle-ball { transform:translateX(30px); }
+    .hero-section { padding:8rem 0 4rem; background:linear-gradient(135deg,var(--primary-bg),var(--secondary-bg)); position:relative; overflow:hidden; }
+    .hero-section::before { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:radial-gradient(circle at 10% 20%,rgba(59,130,246,0.15),transparent 40%),radial-gradient(circle at 90% 80%,rgba(16,185,129,0.15),transparent 40%); }
+    .project-title { font-size:2.8rem; font-weight:700; margin-bottom:1.5rem; line-height:1.1; color:var(--text-primary); position:relative; }
+    .project-title::after { content:''; position:absolute; bottom:-10px; left:0; width:80px; height:4px; background:linear-gradient(90deg,var(--accent-blue),var(--accent-green)); border-radius:2px; }
+    @media (max-width:768px) { .project-title { font-size:2.2rem; } }
+    .project-card { background:var(--card-bg); border-radius:16px; transition:0.4s; margin-bottom:2rem; box-shadow:var(--card-shadow); overflow:hidden; border:1px solid var(--border-color); position:relative; }
+    .project-card::before { content:''; position:absolute; top:0; left:0; width:100%; height:4px; background:linear-gradient(90deg,var(--accent-blue),var(--accent-green)); }
+    .project-card:hover { transform:translateY(-5px); box-shadow:0 15px 30px var(--shadow-color); }
+    .carousel-container { border-radius:12px; overflow:hidden; box-shadow:0 8px 20px var(--shadow-color); border:1px solid var(--border-color); }
+    .carousel-item { height:400px; background:var(--secondary-bg); }
+    .carousel-item img { object-fit:cover; height:100%; width:100%; }
+    .carousel-control-prev,.carousel-control-next { width:45px; height:45px; background:rgba(255,255,255,0.1); backdrop-filter:blur(10px); border-radius:50%; top:50%; transform:translateY(-50%); opacity:0; transition::0.3s; box-shadow:0 2px 10px var(--shadow-color); border:1px solid var(--border-color); }
+    .carousel-container:hover .carousel-control-prev, .carousel-container:hover .carousel-control-next { opacity:1; }
+    .skill-badge { background:linear-gradient(135deg,var(--accent-blue),var(--accent-purple)); color:white; padding:8px 18px; margin:5px; border-radius:20px; font-weight:500; font-size:0.85rem; opacity:0; transform:translateY(20px); transition:0.4s; box-shadow:0 4px 10px rgba(59,130,246,0.2); }
     #skills-container { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
-    .section-title { position:relative; padding-bottom:10px; margin:2rem 0 1.5rem; font-size:1.5rem; }
-    .section-title::after { content:''; position:absolute; bottom:0; left:0; width:50px; height:3px;
-      background: linear-gradient(90deg, var(--accent-color), transparent); border-radius:2px; }
-    .link-btn { background:rgba(255,255,255,0.1); color:var(--text-color)!important;
-      border-radius:10px; padding:12px 25px; margin:8px;
-      transition: all 0.3s ease; display:inline-flex; align-items:center; gap:10px; }
-    .link-btn:hover { background:var(--accent-color); transform:translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,255,136,0.3); }
-    .project-video { border-radius:15px; overflow:hidden;
-      border:2px solid var(--accent-color); box-shadow:0 0 30px rgba(0,255,136,0.1);
-      margin:2rem 0; }
-    .timeline-info {
-      background: linear-gradient(45deg, rgba(0,255,136,0.1), transparent);
-      border-radius:15px; padding:20px; margin:15px 0;
-      border:1px solid rgba(0,255,136,0.2);
-    }
-    .award-badge { background: linear-gradient(45deg, #ffd700, #ffaa00);
-      color:#000; padding:10px 20px; border-radius:25px;
-      display:inline-flex; align-items:center; gap:10px; margin:10px 0; }
-    @media (max-width:768px) { .carousel-item { height:250px; } }
-    .title { font-size:35px; font-family:monospace; }
-    .target-audience { list-style:none; padding-left:0; font-size:19px; }
-    .target-audience li { display:flex; align-items:center; margin-top:5px; }
-    .bullet { font-size:1.2em; margin-right:8px; }
+    .skill-badge.visible { opacity:1; transform:translateY(0); }
+    .section-title { position:relative; padding-bottom:12px; margin:2.5rem 0 1.5rem; font-size:1.5rem; font-weight:600; color:var(--text-primary); }
+    .section-title::after { content:''; position:absolute; bottom:0; left:0; width:50px; height:3px; background:linear-gradient(90deg,var(--accent-blue),var(--accent-green)); border-radius:2px; }
+    .link-btn { background:var(--card-bg); color:var(--text-primary)!important; border-radius:10px; padding:12px 25px; margin:8px; transition:0.3s; display:inline-flex; align-items:center; gap:10px; border:1px solid var(--border-color); font-weight:500; box-shadow:0 2px 8px var(--shadow-color); text-decoration:none; }
+    .link-btn:hover { background:linear-gradient(135deg,var(--accent-blue),var(--accent-green)); transform:translateY(-3px); box-shadow:0 8px 20px rgba(59,130,246,0.25); color:white!important; }
+    .project-video { border-radius:12px; overflow:hidden; border:1px solid var(--border-color); box-shadow:0 8px 20px var(--shadow-color); margin:3rem 0; }
+    .timeline-info { background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(16,185,129,0.05)); border-radius:12px; padding:25px; margin:20px 0; border:1px solid rgba(59,130,246,0.2); position:relative; }
+    .timeline-info::before { content:''; position:absolute; top:0; left:0; width:5px; height:100%; background:linear-gradient(to bottom,var(--accent-blue),var(--accent-green)); }
+    .award-badge { background:linear-gradient(45deg,#fbbf24,#f59e0b); color:white; padding:12px 25px; border-radius:20px; display:inline-flex; align-items:center; gap:10px; font-weight:500; box-shadow:0 5px 15px rgba(251,191,36,0.3); }
+    .target-audience { list-style:none; padding-left:0; font-size:1rem; }
+    .target-audience li { display:flex; align-items:flex-start; margin-top:12px; padding:15px; background:rgba(59,130,246,0.05); border-radius:10px; transition:0.3s; border-left:3px solid var(--accent-blue); }
+    .target-audience li:hover { background:rgba(59,130,246,0.1); transform:translateX(5px); }
+    .bullet { font-size:1.2em; margin-right:12px; color:var(--accent-green); margin-top:2px; }
+    .learning-item { padding:15px; background:rgba(16,185,129,0.05); border-radius:10px; margin-bottom:15px; border-left:3px solid var(--accent-green); transition:0.3s; }
+    .learning-item:hover { background:rgba(16,185,129,0.1); transform:translateX(5px); }
+    .footer { background:var(--secondary-bg); padding:3rem 0; margin-top:4rem; border-top:1px solid var(--border-color); }
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+    .fade-in { opacity:0; animation:fadeInUp 0.8s ease-out forwards; }
+    .delay-1 { animation-delay:0.1s; } .delay-2 { animation-delay:0.2s; } .delay-3 { animation-delay:0.3s; } .delay-4 { animation-delay:0.4s; }
+    @media (max-width:768px) { .carousel-item { height:250px; } .hero-section { padding:6rem 0 2rem; } .link-btn { width:100%; justify-content:center; margin:5px 0; } }
+    .back-btn { position:fixed; bottom:30px; right:30px; background:linear-gradient(135deg,var(--accent-blue),var(--accent-green)); color:white; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 5px 15px rgba(59,130,246,0.3); transition:0.3s; z-index:100; font-weight:bold; }
+    .back-btn:hover { transform:translateY(-5px) scale(1.1); box-shadow:0 8px 20px rgba(59,130,246,0.4); }
+    .tech-specs { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px; margin-top:20px; }
+    .spec-card { background:var(--card-bg); border-radius:10px; padding:20px; border:1px solid var(--border-color); transition:0.3s; text-align:center; box-shadow:0 4px 10px var(--shadow-color); }
+    .spec-card:hover { transform:translateY(-5px); box-shadow:0 8px 20px var(--shadow-color); }
+    .spec-icon { font-size:2rem; color:var(--accent-blue); margin-bottom:10px; }
+    .feature-highlight { display:flex; align-items:center; margin-bottom:15px; padding:15px; background:var(--card-bg); border-radius:10px; box-shadow:0 4px 10px var(--shadow-color); transition:0.3s; border-left:3px solid var(--accent-blue); }
+    .feature-highlight:hover { transform:translateX(5px); box-shadow:0 8px 20px var(--shadow-color); }
+    .feature-icon { width:50px; height:50px; border-radius:50%; background:linear-gradient(135deg,var(--accent-blue),var(--accent-green)); display:flex; align-items:center; justify-content:center; color:white; font-size:1.2rem; margin-right:15px; flex-shrink:0; }
+    .circuit-element { position:absolute; z-index:-1; opacity:0.05; }
+    .circuit-1 { top:10%; left:5%; width:100px; height:100px; background:radial-gradient(circle,var(--accent-blue),transparent 70%); border-radius:50%; }
+    .circuit-2 { bottom:15%; right:10%; width:150px; height:150px; background:radial-gradient(circle,var(--accent-green),transparent 70%); border-radius:50%; }
+    .progress-container { margin:20px 0; }
+    .progress-label { display:flex; justify-content:space-between; margin-bottom:5px; }
+    .progress { height:8px; background:var(--border-color); border-radius:10px; overflow:hidden; }
+    .progress-bar { height:100%; background:linear-gradient(90deg,var(--accent-blue),var(--accent-green)); border-radius:10px; }
   </style>
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark">
+<body data-theme="dark">
+  <div class="circuit-element circuit-1"></div>
+  <div class="circuit-element circuit-2"></div>
+
+  <nav class="navbar">
     <div class="container">
-      <a class="navbar-brand" href="#" style="font-weight:800;">
-        <span style="color: var(--accent-color);">#</span>DeaConnections
-      </a>
+      <a class="navbar-brand mono-font" href="#"><i class="fas fa-microchip me-2" style="color:var(--accent-blue);"></i>PowerElectronics</a>
+      <div class="d-flex align-items-center">
+        <span class="me-2" style="color:var(--text-secondary);">Theme</span>
+        <div class="theme-toggle" id="themeToggle">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+          <span class="theme-toggle-ball"></span>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <div class="container mt-5 pt-5">
-    <div class="project-card p-4">
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="https://ik.imagekit.io/ug3weuxhp/work/contact-maneger.jpg" alt="Contact Manager Screenshot 1">
-              </div>
-              <div class="carousel-item">
-                <img src="https://ik.imagekit.io/ug3weuxhp/work/c.jpg" alt="Contact Manager Screenshot 2">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 fade-in">
+          <h1 class="project-title">Contact Manager Application</h1>
+          <p class="lead mb-4" style="color:var(--text-secondary);">Command-line contact management system using C, linked lists, and file I/O for persistent storage.</p>
+          <div class="d-flex flex-wrap my-4">
+            <a href="#" class="link-btn fade-in delay-1"><i class="fab fa-github"></i> Source Code</a>
+            <a href="#" class="link-btn fade-in delay-2"><i class="fab fa-youtube"></i> Demo Video</a>
+            <a href="#" class="link-btn fade-in delay-3" target="_blank"><i class="fab fa-google-drive"></i> Project Files</a>
           </div>
         </div>
-        <div class="col-md-6">
-          <h2 class="display-5 title fw-bold mb-3">Contact Manager Application</h2>
-          <div class="d-flex flex-wrap my-4">
-            <a href="#" class="link-btn"><i class="fab fa-github"></i> Source Code</a>
-            <a href="#" class="link-btn"><i class="fab fa-youtube"></i> Demo Video</a>
-            <a href="#" class="link-btn" target="_blank"><i class="fab fa-google-drive"></i> Project Files</a>
+        <div class="col-lg-6 fade-in delay-2">
+          <div class="mb-4">
+            <h4 class="section-title">Technologies Used</h4>
+            <div id="skills-container">
+              <span class="skill-badge">C Programming</span>
+              <span class="skill-badge">File I/O</span>
+              <span class="skill-badge">Linked Lists</span>
+              <span class="skill-badge">Command Line UI</span>
+            </div>
           </div>
-          <div class="mb-4 d-flex flex-wrap gap-2 justify-content-center" id="skills-container">
-            <span class="skill-badge">C Programming</span>
-            <span class="skill-badge">File I/O</span>
-            <span class="skill-badge">Linked Lists</span>
-            <span class="skill-badge">Command Line UI</span>
-          </div>
-
-          
-          <div class="timeline-info">
-            <p class="mb-2"><i class="fas fa-rocket me-2"></i><strong>Started:</strong> February 15, 2024</p>
-            <p class="mb-2"><i class="fas fa-flag-checkered me-2"></i><strong>Completed:</strong> February 28, 2024</p>
-            <p class="mb-0"><i class="fas fa-clock me-2"></i><strong>Duration:</strong> 2 Weeks</p>
+          <div class="timeline-info fade-in delay-3">
+            <p class="mb-2"><i class="fas fa-rocket me-2" style="color:var(--accent-blue);"></i><strong>Started:</strong> February 15, 2024</p>
+            <p class="mb-2"><i class="fas fa-flag-checkered me-2" style="color:var(--accent-green);"></i><strong>Completed:</strong> February 28, 2024</p>
+            <p class="mb-0"><i class="fas fa-clock me-2" style="color:var(--accent-blue);"></i><strong>Duration:</strong> 2 Weeks</p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      
-      <!-- Video Section -->
+  <div class="container mt-5">
+    <div class="project-card p-4 p-md-5">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="carousel-container">
+            <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active"><img src="https://ik.imagekit.io/ug3weuxhp/work/contact-maneger.jpg" alt="Contact Manager"></div>
+                <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/c.jpg" alt="Contact List"></div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+              <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+            </div>
+          </div>
+
+          <h4 class="section-title mt-4">Technical Specifications</h4>
+          <div class="tech-specs">
+            <div class="spec-card"><div class="spec-icon"><i class="fas fa-code"></i></div><h5>Language</h5><p>C (ANSI)</p></div>
+            <div class="spec-card"><div class="spec-icon"><i class="fas fa-save"></i></div><h5>Storage</h5><p>Text File</p></div>
+            <div class="spec-card"><div class="spec-icon"><i class="fas fa-list"></i></div><h5>Data Structure</h5><p>Linked List</p></div>
+            <div class="spec-card"><div class="spec-icon"><i class="fas fa-terminal"></i></div><h5>Interface</h5><p>CLI</p></div>
+          </div>
+
+          <h4 class="section-title mt-4">Project Progress</h4>
+          <div class="progress-container"><div class="progress-label"><span>Core Logic</span><span>100%</span></div><div class="progress"><div class="progress-bar" style="width:100%"></div></div></div>
+          <div class="progress-container"><div class="progress-label"><span>File Handling</span><span>100%</span></div><div class="progress"><div class="progress-bar" style="width:100%"></div></div></div>
+          <div class="progress-container"><div class="progress-label"><span>UI/UX</span><span>90%</span></div><div class="progress"><div class="progress-bar" style="width:90%"></div></div></div>
+        </div>
+
+        <div class="col-md-6">
+          <h4 class="section-title">Project Overview</h4>
+          <p class="mb-4">A lightweight, command-line contact manager built in C. Supports CRUD operations with data persistence using file I/O and dynamic memory via linked lists.</p>
+
+          <h4 class="section-title">Key Features</h4>
+          <div class="feature-highlight"><div class="feature-icon"><i class="fas fa-plus"></i></div><div><h5 class="fw-bold">Add Contacts</h5><p class="mb-0">Name, phone, email, address</p></div></div>
+          <div class="feature-highlight"><div class="feature-icon"><i class="fas fa-search"></i></div><div><h5 class="fw-bold">Search & Update</h5><p class="mb-0">Find and edit by name/phone</p></div></div>
+          <div class="feature-highlight"><div class="feature-icon"><i class="fas fa-trash"></i></div><div><h5 class="fw-bold">Delete Contacts</h5><p class="mb-0">Remove from list and file</p></div></div>
+
+          <h4 class="section-title mt-4">Achievements</h4>
+          <div class="award-badge"><i class="fas fa-trophy"></i>Efficient memory management using linked lists</div>
+        </div>
+      </div>
+
       <div class="project-video ratio ratio-16x9">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Wzc7U0iI3Ko?si=zbt722DK6rtNqz66" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/Wzc7U0iI3Ko?si=zbt722DK6rtNqz66" title="Contact Manager Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
       <div class="row g-4 mt-2">
         <div class="col-md-6">
-          <h4 class="section-title">Project Overview</h4>
-          <p class="lead">
-            A command-line based Contact Manager Application written in C. It allows users to add, view, search, update, and delete contacts. All data is stored in a text file using file I/O operations, and contacts are managed internally using linked lists.
-          </p>
-          <h4 class="section-title">Key Features</h4>
-          <ul class="list-unstyled">
-            <li class="mb-3">🔸 <strong>Add Contacts:</strong> Store contact name, phone, email, and address.</li>
-            <li class="mb-3">🔸 <strong>Search & Update:</strong> Find contacts by name or phone and edit details.</li>
-            <li class="mb-3">🔸 <strong>Delete Contacts:</strong> Remove unwanted entries from the list and file.</li>
-            <li class="mb-3">🔸 <strong>Save & Load:</strong> Persist data via file I/O between sessions.</li>
-          </ul>
+          <h4 class="section-title">Key Learnings</h4>
+          <div class="learning-item"><h5 class="fw-bold mb-2">Dynamic Memory & Pointers</h5><p class="mb-0">Mastered linked list implementation and memory allocation in C.</p></div>
+          <div class="learning-item"><h5 class="fw-bold mb-2">File I/O Operations</h5><p class="mb-0">Learned persistent data storage using text files.</p></div>
+          <div class="learning-item"><h5 class="fw-bold mb-2">CLI Design</h5><p class="mb-0">Built intuitive menu-driven interface with input validation.</p></div>
         </div>
         <div class="col-md-6">
-          <h4 class="section-title">Achievements & Insights</h4>
-          <div class="award-badge"><i class="fas fa-trophy"></i>Efficient memory management using linked lists.</div>
           <h4 class="section-title">Target Audience</h4>
           <ul class="target-audience">
-            <li><span class="bullet">🔹</span> Beginners learning data structures in C.</li>
-            <li><span class="bullet">🔹</span> Students practicing file I/O.</li>
-            <li><span class="bullet">🔹</span> Developers building CLI tools.</li>
-            <li><span class="bullet">🔹</span> Educators demonstrating linked list usage.</li>
+            <li><span class="bullet">Beginners learning data structures in C</span></li>
+            <li><span class="bullet">Students practicing file I/O</span></li>
+            <li><span class="bullet">Developers building CLI tools</span></li>
+            <li><span class="bullet">Educators demonstrating linked lists</span></li>
+          </ul>
+          <h4 class="section-title mt-4">Applications</h4>
+          <ul class="target-audience">
+            <li><span class="bullet">Educational projects</span></li>
+            <li><span class="bullet">Personal contact management</span></li>
+            <li><span class="bullet">Lightweight CRM prototype</span></li>
+            <li><span class="bullet">Embedded system data logging</span></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
+  <footer class="footer">
+    <div class="container text-center">
+      <p class="mb-0" style="color:var(--text-secondary);">© 2025 Power Electronics Portfolio | C & Embedded Systems</p>
+    </div>
+  </footer>
+
+  <a href="#" class="back-btn"><i class="fas fa-arrow-left"></i></a>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    const badges = document.querySelectorAll('.skill-badge');
-    badges.forEach((badge, i) => setTimeout(() => badge.classList.add('visible'), i*150));
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    body.setAttribute('data-theme', currentTheme);
+    themeToggle.addEventListener('click', () => {
+      const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+    window.addEventListener('scroll', () => document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50));
+    document.querySelectorAll('.skill-badge').forEach((s,i) => setTimeout(() => s.classList.add('visible'), i*150));
+    const fadeInOnScroll = () => document.querySelectorAll('.fade-in').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight - 150) { el.style.opacity = "1"; el.style.transform = "translateY(0)"; } });
+    window.addEventListener('scroll', fadeInOnScroll); fadeInOnScroll();
   </script>
 </body>
 </html>

@@ -3,121 +3,785 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Showcase - MLCS Smart Grid Security</title>
+  <title>MLCS Smart Grid Security | IoT Cybersecurity</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root { --primary-color:#1a1a1a; --secondary-color:#2d2d2d; --accent-color:#00ff88; --text-color:#ffffff; }
-    body { background: var(--primary-color); color: var(--text-color); font-family:'Inter',sans-serif; overflow-x:hidden; }
-    @keyframes fadeInUp { from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} }
-    .project-card { background: var(--secondary-color); border-radius:20px; border:1px solid rgba(255,255,255,0.1); margin-bottom:2rem; padding:2rem; animation:fadeInUp 0.8s ease-out; box-shadow:0 10px 30px rgba(0,0,0,0.3); transition:transform 0.3s ease; }
-    .project-card:hover { transform:translateY(-10px); box-shadow:0 15px 40px rgba(0,255,136,0.2); }
-    .carousel-item { height:400px; background:#000; transition:opacity 0.8s ease-in-out; }
-    .carousel-item img { width:100%; height:100%; object-fit:cover; border-radius:15px; }
-    .skill-badge { background:linear-gradient(45deg,var(--accent-color),#00ccff); color:var(--primary-color); padding:8px 15px; margin:5px; border-radius:25px; font-weight:600; opacity:0; transform:translateY(20px); transition:all 0.4s ease; white-space:nowrap; }
-    #skills-container { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
-    .skill-badge.visible { opacity:1; transform:translateY(0); }
-    .section-title { position:relative; margin:2rem 0 1rem; padding-bottom:10px; font-size:1.5rem; }
-    .section-title::after { content:''; position:absolute; left:0; bottom:0; width:50px; height:3px; background:linear-gradient(90deg,var(--accent-color),transparent); border-radius:2px; }
-    .link-btn { background:rgba(255,255,255,0.1); color:var(--text-color)!important; padding:12px 25px; margin:8px; border-radius:10px; display:inline-flex; align-items:center; gap:10px; transition:all 0.3s ease; }
-    .link-btn:hover { background:var(--accent-color); transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,255,136,0.3); }
-    .project-video { border-radius:15px; overflow:hidden; border:2px solid var(--accent-color); box-shadow:0 0 30px rgba(0,255,136,0.1); margin:2rem 0; }
-    .timeline-info { background:linear-gradient(45deg,rgba(0,255,136,0.1),transparent); padding:20px; border-radius:15px; margin:1.5rem 0; border:1px solid rgba(0,255,136,0.2); }
-    .award-badge { background:linear-gradient(45deg,#ffd700,#ffaa00); color:#000; padding:10px 20px; border-radius:25px; display:inline-flex; align-items:center; gap:10px; margin:10px 0; }
-    @media(max-width:768px){.carousel-item{height:250px;}}
-    .title{font-size:35px; font-family:monospace;}
-    .target-audience{list-style:none; padding:0; font-size:19px;}
-    .target-audience li{display:flex; align-items:center; margin-top:5px;}
-    .bullet{font-size:1.2em; margin-right:8px;}
+    :root {
+      /* Dark Theme (Default) */
+      --primary-bg: #0f172a;
+      --secondary-bg: #1e293b;
+      --card-bg: #1e293b;
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --accent-blue: #3b82f6;
+      --accent-green: #10b981;
+      --accent-purple: #8b5cf6;
+      --border-color: #334155;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    }
+    [data-theme="light"] {
+      /* Light Theme */
+      --primary-bg: #f8fafc;
+      --secondary-bg: #ffffff;
+      --card-bg: #ffffff;
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --accent-blue: #3b82f6;
+      --accent-green: #10b981;
+      --accent-purple: #8b5cf6;
+      --border-color: #e2e8f0;
+      --shadow-color: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    body {
+      background-color: var(--primary-bg);
+      color: var(--text-primary);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    .mono-font {
+      font-family: 'Roboto Mono', monospace;
+    }
+    /* Navigation */
+    .navbar {
+      background: var(--secondary-bg);
+      box-shadow: 0 2px 10px var(--shadow-color);
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .navbar.scrolled {
+      box-shadow: 0 5px 20px var(--shadow-color);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--text-primary);
+    }
+    /* Theme Toggle */
+    .theme-toggle {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      width: 60px;
+      height: 30px;
+    }
+    .theme-toggle i {
+      font-size: 14px;
+      position: absolute;
+      transition: all 0.3s ease;
+    }
+    .fa-sun {
+      left: 8px;
+      color: #f59e0b;
+    }
+    .fa-moon {
+      right: 8px;
+      color: #cbd5e1;
+    }
+    .theme-toggle-ball {
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      background: var(--accent-blue);
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      z-index: 1;
+    }
+    [data-theme="light"] .theme-toggle-ball {
+      transform: translateX(30px);
+    }
+    /* Hero Section */
+    .hero-section {
+      padding: 8rem 0 4rem;
+      background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 40%);
+    }
+    .project-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      color: var(--text-primary);
+      position: relative;
+    }
+    .project-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+      border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+      .project-title {
+        font-size: 2.2rem;
+      }
+    }
+    /* Project Card */
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      transition: all 0.4s ease;
+      margin-bottom: 2rem;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      position: relative;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px var(--shadow-color);
+    }
+    /* Carousel */
+    .carousel-container {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px var(--shadow-color);
+      position: relative;
+      border: 1px solid var(--border-color);
+    }
+    .carousel-item {
+      transition: opacity 0.8s ease-in-out;
+      height: 400px;
+      background: var(--secondary-bg);
+    }
+    .carousel-item img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+    .carousel-control-prev, .carousel-control-next {
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px var(--shadow-color);
+      border: 1px solid var(--border-color);
+    }
+    .carousel-container:hover .carousel-control-prev,
+    .carousel-container:hover .carousel-control-next {
+      opacity: 1;
+    }
+    /* Skills */
+    .skill-badge {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      color: white;
+      margin: 5px;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+      white-space: nowrap;
+      box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
+    }
+    #skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .skill-badge.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Section Titles */
+    .section-title {
+      position: relative;
+      padding-bottom: 12px;
+      margin: 2.5rem 0 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+      border-radius: 2px;
+    }
+    /* Buttons */
+    .link-btn {
+      background: var(--card-bg);
+      color: var(--text-primary) !important;
+      border-radius: 10px;
+      padding: 12px 25px;
+      margin: 8px;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border-color);
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 2px 8px var(--shadow-color);
+    }
+    .link-btn:hover {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+      color: white !important;
+    }
+    /* Video Section */
+    .project-video {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 8px 20px var(--shadow-color);
+      margin: 3rem 0;
+      position: relative;
+    }
+    /* Timeline */
+    .timeline-info {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(16, 185, 129, 0.05));
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px 0;
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    .timeline-info::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent-blue), var(--accent-green));
+    }
+    /* Awards */
+    .award-badge {
+      background: linear-gradient(45deg, #dc2626, #f97316);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0;
+      font-weight: 500;
+      box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+    }
+    /* Target Audience */
+    .target-audience {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1rem;
+    }
+    .target-audience li {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 12px;
+      padding: 15px;
+      background: rgba(220, 38, 38, 0.05);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      border-left: 3px solid #dc2626;
+    }
+    .target-audience li:hover {
+      background: rgba(220, 38, 38, 0.1);
+      transform: translateX(5px);
+    }
+    .bullet {
+      font-size: 1.2em;
+      margin-right: 12px;
+      color: #f97316;
+      margin-top: 2px;
+    }
+    /* Key Learnings */
+    .learning-item {
+      padding: 15px;
+      background: rgba(16, 185, 129, 0.05);
+      border-radius: 10px;
+      margin-bottom: 15px;
+      border-left: 3px solid var(--accent-green);
+      transition: all 0.3s ease;
+    }
+    .learning-item:hover {
+      background: rgba(16, 185, 129, 0.1);
+      transform: translateX(5px);
+    }
+    /* Footer */
+    .footer {
+      background: var(--secondary-bg);
+      padding: 3rem 0;
+      margin-top: 4rem;
+      border-top: 1px solid var(--border-color);
+    }
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .carousel-item {
+        height: 250px;
+      }
+      .hero-section {
+        padding: 6rem 0 2rem;
+      }
+      .link-btn {
+        width: 100%;
+        justify-content: center;
+        margin: 5px 0;
+      }
+    }
+    /* Back to Portfolio Button */
+    .back-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+      transition: all 0.3s ease;
+      z-index: 100;
+      font-weight: bold;
+    }
+    .back-btn:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+    }
+    /* Tech Specs */
+    .tech-specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .spec-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      text-align: center;
+      box-shadow: 0 4px 10px var(--shadow-color);
+    }
+    .spec-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px var(--shadow-color);
+    }
+    .spec-icon {
+      font-size: 2rem;
+      color: #dc2626;
+      margin-bottom: 10px;
+    }
+    /* Feature Highlights */
+    .feature-highlight {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 15px;
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px var(--shadow-color);
+      transition: all 0.3s ease;
+      border-left: 3px solid #dc2626;
+    }
+    .feature-highlight:hover {
+      transform: translateX(5px);
+      box-shadow: 0 8px 20px var(--shadow-color);
+    }
+    .feature-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dc2626, #f97316);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+    /* Circuit Elements */
+    .circuit-element {
+      position: absolute;
+      z-index: -1;
+      opacity: 0.05;
+    }
+    .circuit-1 {
+      top: 10%;
+      left: 5%;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #dc2626 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .circuit-2 {
+      bottom: 15%;
+      right: 10%;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle, #f97316 0%, transparent 70%);
+      border-radius: 50%;
+    }
   </style>
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark">
+<body data-theme="dark">
+  <!-- Circuit Elements -->
+  <div class="circuit-element circuit-1"></div>
+  <div class="circuit-element circuit-2"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
     <div class="container">
-      <a class="navbar-brand" href="#" style="font-weight:800;"><span style="color:var(--accent-color);">#</span>MLCS Smart Grid Security</a>
+      <a class="navbar-brand mono-font" href="#">
+        <i class="fas fa-shield-alt me-2" style="color: #dc2626;"></i>PowerElectronics
+      </a>
+      <div class="d-flex align-items-center">
+        <span class="me-2" style="color: var(--text-secondary);">Theme</span>
+        <div class="theme-toggle" id="themeToggle">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+          <span class="theme-toggle-ball"></span>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <div class="container mt-5">
-    <div class="project-card">
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div id="mlcsCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active"><img src="https://ik.imagekit.io/ug3weuxhp/work/ps-1.jpeg" alt="MLCS Hardware Model"></div>
-              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/ps-2.jpeg" alt="MLCS Hardware Model"></div>
-              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/ps-3.jpeg" alt="MLCS Hardware Model"></div>
-              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/ps-4.jpeg" alt="MLCS Hardware Model"></div>
-              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/ps-5.jpeg" alt="MLCS Hardware Model"></div>
-              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/ps-6.jpeg" alt="MLCS Hardware Model"></div>
-              <div class="carousel-item"><img src="https://ik.imagekit.io/ug3weuxhp/work/ps-7.jpeg" alt="MLCS Hardware Model"></div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#mlcsCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
-            
-            <button class="carousel-control-next" type="button" data-bs-target="#mlcsCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <h2 class="display-5 title fw-bold mb-3">Smart Grid Cybersecurity via MLCS Hardware</h2>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 fade-in">
+          <h1 class="project-title">MLCS Smart Grid Security</h1>
+          <p class="lead mb-4" style="color: var(--text-secondary);">Hardware-based Multi-Level Control Security (MLCS) for IoT-enabled smart grids. Prevents false data injection and unauthorized switching via ESP32, high-frequency sampling, and chip-lock mechanisms.</p>
+          
+          <!-- Links -->
           <div class="d-flex flex-wrap my-4">
-            <a href="#" class="link-btn"><i class="fab fa-github"></i> Source Code</a>
-            <a href="#" class="link-btn"><i class="fab fa-youtube"></i> Demo Video</a>
+            <a href="#" class="link-btn fade-in delay-1">
+              <i class="fab fa-github"></i> Source Code
+            </a>
+            <a href="#" class="link-btn fade-in delay-2">
+              <i class="fab fa-youtube"></i> Demo Video
+            </a>
           </div>
-          <div class="mb-4 d-flex flex-wrap gap-2 justify-content-center" id="skills-container">
-            <span class="skill-badge">ESP32</span>
-            <span class="skill-badge">MLCS Algorithm</span>
-            <span class="skill-badge">Global Server (GAS)</span>
-            <span class="skill-badge">High Sampling Rate</span>
-            <span class="skill-badge">Chip Lock Security</span>
-            <span class="skill-badge">Session Handling</span>
-            <span class="skill-badge">IoT Cyber Defense</span>
+        </div>
+        
+        <div class="col-lg-6 fade-in delay-2">
+          <!-- Skills -->
+          <div class="mb-4">
+            <h4 class="section-title">Technologies Used</h4>
+            <div class="d-flex flex-wrap gap-2 justify-content-center" id="skills-container">
+              <span class="skill-badge">ESP32</span>
+              <span class="skill-badge">MLCS Algorithm</span>
+              <span class="skill-badge">Global Server (GAS)</span>
+              <span class="skill-badge">High Sampling Rate</span>
+              <span class="skill-badge">Chip Lock Security</span>
+              <span class="skill-badge">Session Handling</span>
+              <span class="skill-badge">IoT Cyber Defense</span>
+            </div>
           </div>
-          <div class="timeline-info">
-            <p><i class="fas fa-rocket me-2"></i><strong>Started:</strong> May 14, 2025</p>
-            <p><i class="fas fa-flag-checkered me-2"></i><strong>Status:</strong> Prototype</p>
+          <!-- Timeline -->
+          <div class="timeline-info fade-in delay-3">
+            <p class="mb-2"><i class="fas fa-rocket me-2" style="color: #dc2626;"></i><strong>Started:</strong> May 14, 2025</p>
+            <p class="mb-0"><i class="fas fa-microscope me-2" style="color: #f97316;"></i><strong>Status:</strong> Prototype</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Showcase -->
+  <div class="container mt-5">
+    <!-- Project Card -->
+    <div class="project-card p-4 p-md-5">
+      <div class="row g-4">
+        <!-- Carousel -->
+        <div class="col-md-6">
+          <div class="carousel-container">
+            <div id="mlcsCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/ps-1.jpeg" class="d-block w-100" alt="Hardware Model 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/ps-2.jpeg" class="d-block w-100" alt="Hardware Model 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/ps-3.jpeg" class="d-block w-100" alt="Hardware Model 3">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/ps-4.jpeg" class="d-block w-100" alt="Hardware Model 4">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/ps-5.jpeg" class="d-block w-100" alt="Hardware Model 5">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/ps-6.jpeg" class="d-block w-100" alt="Hardware Model 6">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://ik.imagekit.io/ug3weuxhp/work/ps-7.jpeg" class="d-block w-100" alt="Hardware Model 7">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#mlcsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#mlcsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Technical Specifications -->
+          <h4 class="section-title mt-4">Technical Specifications</h4>
+          <div class="tech-specs">
+            <div class="spec-card">
+              <div class="spec-icon"><i class="fas fa-microchip"></i></div>
+              <h5>Core</h5>
+              <p>ESP32</p>
+            </div>
+            <div class="spec-card">
+              <div class="spec-icon"><i class="fas fa-wave-square"></i></div>
+              <h5>Sampling</h5>
+              <p>High-Frequency</p>
+            </div>
+            <div class="spec-card">
+              <div class="spec-icon"><i class="fas fa-lock"></i></div>
+              <h5>Security</h5>
+              <p>Chip-Lock</p>
+            </div>
+            <div class="spec-card">
+              <div class="spec-icon"><i class="fas fa-server"></i></div>
+              <h5>Backend</h5>
+              <p>Global Server</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Details -->
+        <div class="col-md-6">
+          <h4 class="section-title">Project Overview</h4>
+          <p class="mb-4">A hardware-implemented <strong>Multi-Level Control Security (MLCS)</strong> system for smart grid IoT. Combines ESP32 high-speed sampling, chip-lock hardware, session-based switching, and a global server (GAS) to prevent false data injection and unauthorized control.</p>
+
+          <h4 class="section-title">Key Features</h4>
+          
+          <div class="feature-highlight">
+            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+            <div>
+              <h5 class="fw-bold">MLCS Security</h5>
+              <p class="mb-0">Multi-level session control for switchgear</p>
+            </div>
+          </div>
+
+          <div class="feature-highlight">
+            <div class="feature-icon"><i class="fas fa-tachometer-alt"></i></div>
+            <div>
+              <h5 class="fw-bold">High-Frequency Sampling</h5>
+              <p class="mb-0">ESP32-based real-time data acquisition</p>
+            </div>
+          </div>
+
+          <div class="feature-highlight">
+            <div class="feature-icon"><i class="fas fa-key"></i></div>
+            <div>
+              <h5 class="fw-bold">Chip-Lock Mechanism</h5>
+              <p class="mb-0">Hardware-level injection prevention</p>
+            </div>
+          </div>
+
+          <div class="feature-highlight">
+            <div class="feature-icon"><i class="fas fa-globe"></i></div>
+            <div>
+              <h5 class="fw-bold">Global Server (GAS)</h5>
+              <p class="mb-0">Centralized threat detection & logging</p>
+            </div>
+          </div>
+
+          <h4 class="section-title mt-4">Impact</h4>
+          <div class="award-badge">
+            <i class="fas fa-shield-alt"></i> Prototype for Securing IoT-Enabled Power Grids
           </div>
         </div>
       </div>
 
+      <!-- Video/Image Section -->
       <div class="project-video ratio ratio-16x9">
-        <img src="https://ik.imagekit.io/ug3weuxhp/work/ps-8.jpg" alt="">
+        <img src="https://ik.imagekit.io/ug3weuxhp/work/ps-8.jpg" class="img-fluid" alt="MLCS System Diagram">
       </div>
 
+      <!-- Project Details Sections -->
       <div class="row g-4 mt-2">
         <div class="col-md-6">
-          <h4 class="section-title">Abstract & Overview</h4>
-          <p class="lead">
-            The development of smart grids involves deep coupling of cyber and physical systems. With nearly 80% of cyberattacks targeting power networks—ranging from false data injection to fake switchgear positions—there is a critical need for robust IoT-based cybersecurity. This project presents a novel hardware implementation of the <strong>Multi-Level Control Security (MLCS)</strong> system using a global server (GAS) and ESP32, ensuring high accuracy through high-frequency sampling and a chip-lock mechanism to prevent data injection and unauthorized switching operations.
-          </p>
-          <h4 class="section-title">Key Features</h4>
-          <ul class="list-unstyled">
-            <li class="mb-3">🔸 <strong>MLCS Security:</strong> Multi-level control with session handling to secure switching events.</li>
-            <li class="mb-3">🔸 <strong>High-Frequency Sampling:</strong> ESP32-based data acquisition for enhanced accuracy.</li>
-            <li class="mb-3">🔸 <strong>Chip-Lock Provision:</strong> Hardware lock to prevent false data injection.</li>
-            <li class="mb-3">🔸 <strong>Global Server (GAS):</strong> Centralized management and threat detection.</li>
-          </ul>
-        </div>
-        <div class="col-md-6">
-          <h4 class="section-title">Impact & Next Steps</h4>
-          <div class="award-badge">
-            <i class="fas fa-shield-alt"></i>
-            Prototype for securing IoT-enabled power grids against sophisticated cyber threats.
+          <h4 class="section-title">Key Learnings</h4>
+          
+          <div class="learning-item">
+            <h5 class="fw-bold mb-2">Hardware-Level Cyber Defense</h5>
+            <p class="mb-0">Implemented chip-lock to prevent data spoofing.</p>
           </div>
+          
+          <div class="learning-item">
+            <h5 class="fw-bold mb-2">Session-Based Control</h5>
+            <p class="mb-0">MLCS ensures only authorized switching events.</p>
+          </div>
+          
+          <div class="learning-item">
+            <h5 class="fw-bold mb-2">High-Speed Sampling</h5>
+            <p class="mb-0">ESP32 ADC used for real-time anomaly detection.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
           <h4 class="section-title">Target Audience</h4>
           <ul class="target-audience">
-            <li><span class="bullet">🔹</span>Power system cybersecurity researchers</li>
-            <li><span class="bullet">🔹</span>IoT and embedded security engineers</li>
-            <li><span class="bullet">🔹</span>Smart grid developers</li>
-            <li><span class="bullet">🔹</span>Academic & industrial R&D teams</li>
+            <li><span class="bullet">Power system cybersecurity researchers</span></li>
+            <li><span class="bullet">IoT and embedded security engineers</span></li>
+            <li><span class="bullet">Smart grid developers</span></li>
+            <li><span class="bullet">Academic & industrial R&D teams</span></li>
+          </ul>
+
+          <h4 class="section-title mt-4">Next Steps</h4>
+          <ul class="target-audience">
+            <li><span class="bullet">Full-scale deployment in substation pilot</span></li>
+            <li><span class="bullet">Integration with SCADA systems</span></li>
+            <li><span class="bullet">AI-based anomaly detection layer</span></li>
+            <li><span class="bullet">Certification for IEC 61850 compliance</span></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p class="mb-0" style="color: var(--text-secondary);">© 2025 Power Electronics Portfolio | IoT & Cybersecurity</p>
+    </div>
+  </footer>
+
+  <!-- Back to Portfolio Button -->
+  <a href="#" class="back-btn">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.querySelectorAll('.skill-badge').forEach((b,i)=>setTimeout(()=>b.classList.add('visible'),i*150));
+    // Theme Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    body.setAttribute('data-theme', currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Skill badges animation
+    const skills = document.querySelectorAll('.skill-badge');
+    skills.forEach((skill, index) => {
+      setTimeout(() => {
+        skill.classList.add('visible');
+      }, index * 150);
+    });
+
+    // Fade in on scroll
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const fadeInOnScroll = () => {
+      fadeElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.style.opacity = "1";
+          element.style.transform = "translateY(0)";
+        }
+      });
+    };
+    window.addEventListener('scroll', fadeInOnScroll);
+    fadeInOnScroll();
   </script>
 </body>
 </html>
