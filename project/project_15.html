@@ -3,44 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Showcase - House Wiring Demonstration Model</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <style>
-    :root {
-      --primary-color: #1a1a1a;
-      --secondary-color: #2d2d2d;
-      --accent-color: #00ff88;
-      --text-color: #ffffff;
-    }
-    body {
-      background-color: var(--primary-color);
-      color: var(--text-color);
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-    }
-    @keyframes fadeInUp { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
-    .project-card { background: var(--secondary-color); border-radius:20px; border:1px solid rgba(255,255,255,0.1); transition:transform 0.3s ease; margin-bottom:2rem; animation:fadeInUp 0.8s ease-out; box-shadow:0 10px 30px rgba(0,0,0,0.3); }
-    .project-card:hover { transform:translateY(-10px); box-shadow:0 15px 40px rgba(0,255,136,0.2); }
-    .carousel-item { transition:opacity 0.8s ease-in-out; height:400px; background:#000; }
-    .carousel-item img { object-fit:cover; height:100%; width:100%; border-radius:15px; }
-    .skill-badge { background:linear-gradient(45deg,var(--accent-color),#00ccff); color:var(--primary-color); margin:5px; padding:8px 15px; border-radius:25px; font-weight:600; opacity:0; transform:translateY(20px); transition:all 0.4s ease; white-space:nowrap; }
-    .skill-badge.visible { opacity:1; transform:translateY(0); }
-    .section-title { position:relative; padding-bottom:10px; margin:2rem 0 1.5rem; font-size:1.5rem; }
-    .section-title::after { content:''; position:absolute; bottom:0; left:0; width:50px; height:3px; background:linear-gradient(90deg,var(--accent-color),transparent); border-radius:2px; }
-    .link-btn { background:rgba(255,255,255,0.1); color:var(--text-color)!important; border-radius:10px; padding:12px 25px; margin:8px; transition:all 0.3s ease; display:inline-flex; align-items:center; gap:10px; }
-    .link-btn:hover { background:var(--accent-color); transform:translateY(-3px); box-shadow:0 5px 15px rgba(0,255,136,0.3); }
-    .project-video { border-radius:15px; overflow:hidden; border:2px solid var(--accent-color); box-shadow:0 0 30px rgba(0,255,136,0.1); margin:2rem 0; }
-    .timeline-info { background:linear-gradient(45deg,rgba(0,255,136,0.1),transparent); border-radius:15px; padding:20px; margin:15px 0; border:1px solid rgba(0,255,136,0.2); }
-    .award-badge { background:linear-gradient(45deg,#ffd700,#ffaa00); color:#000; padding:10px 20px; border-radius:25px; display:inline-flex; align-items:center; gap:10px; margin:10px 0; }
-    .target-audience { list-style:none; padding-left:0; font-size:19px; }
-    .target-audience li { display:flex; align-items:center; margin-top:5px; }
-    .bullet { font-size:1.2em; margin-right:8px; }
-    .title { font-size:35px; font-family:monospace; }
-  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/project.css">
+  <title>Project Showcase - House Wiring Demonstration Model</title>
+  
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark"><div class="container"><a class="navbar-brand" href="#" style="font-weight:800;"><span style="color: var(--accent-color);">#</span>DeaConnections</a></div></nav>
+    <!-- Navbar -->
+  <nav class="pnav" id="pnav">
+    <div class="pnav-inner">
+      <a href="../index.html" class="pnav-brand">
+        <span>Darshit Vaghani</span>
+      </a>
+      <div class="pnav-right">
+        <a href="../index.html#projects" class="pnav-back">
+          <i class="fas fa-arrow-left"></i> Portfolio
+        </a>
+        <div class="ptheme-switcher" id="pthemeSwitcher">
+          <button class="ptheme-btn" data-theme-val="dark" title="Dark"><i class="fas fa-moon"></i></button>
+          <button class="ptheme-btn" data-theme-val="light" title="Light"><i class="fas fa-sun"></i></button>
+          <button class="ptheme-btn" data-theme-val="electric" title="Electric"><i class="fas fa-bolt"></i></button>
+        </div>
+      </div>
+    </div>
+  </nav>
   <div class="container mt-5 pt-5"><div class="project-card p-4">
     <div class="row g-4">
       <div class="col-md-6">
@@ -107,9 +97,52 @@
       </div>
     </div>
   </div></div>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    document.querySelectorAll('.skill-badge').forEach((skill, i) => setTimeout(() => skill.classList.add('visible'), i*150));
+    // ── Theme sync with main portfolio ──────────────────────
+    const body = document.body;
+    const switcher = document.getElementById('pthemeSwitcher');
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+    body.setAttribute('data-theme', savedTheme);
+
+    function setTheme(t) {
+      body.setAttribute('data-theme', t);
+      localStorage.setItem('portfolio-theme', t);
+      document.querySelectorAll('.ptheme-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.themeVal === t);
+      });
+    }
+    setTheme(savedTheme);
+
+    switcher.addEventListener('click', e => {
+      const btn = e.target.closest('.ptheme-btn');
+      if (btn) setTheme(btn.dataset.themeVal);
+    });
+
+    // ── Navbar scroll class ──────────────────────────────────
+    const nav = document.getElementById('pnav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+      document.getElementById('backToTop').classList.toggle('active', window.scrollY > 300);
+    });
+
+    // ── Skill badges stagger ─────────────────────────────────
+    document.querySelectorAll('.skill-badge').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), i * 120);
+    });
+
+    // ── IntersectionObserver fade-in ─────────────────────────
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
   </script>
 </body>
 </html>
