@@ -462,27 +462,143 @@ body::before {
 .delay-4 { transition-delay:0.4s; }
 
 /* ── Responsive ─────────────────────────────────────────────── */
+
+/* Tablet (≤ 991px) */
 @media (max-width: 991px) {
-  .project-card > .p-card-inner { padding:2rem 1.5rem; }
-  .p-hero { padding:5.5rem 0 2.5rem; }
+  .pnav-inner { padding: 0.75rem 1.25rem; }
+  .p-hero { padding: 5.5rem 0 2.5rem; }
+  .project-card > .p-card-inner { padding: 2rem 1.5rem; }
+  .p-body { padding: 0 1.25rem 3rem; }
+  .tech-specs { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* Mobile (≤ 768px) */
 @media (max-width: 768px) {
-  .p-hero { padding:5rem 0 2rem; }
-  .p-title { font-size:clamp(1.5rem, 7vw, 2rem); }
-  .carousel-item { height:240px; }
-  .p-links { flex-direction:column; }
-  .link-btn { justify-content:center; }
-  .tech-specs { grid-template-columns:repeat(2, 1fr); }
-  .pnav-inner { padding:0.75rem 1rem; }
-  .p-body { padding:0 1rem 3rem; }
-  .project-card > .p-card-inner { padding:1.5rem 1rem; }
-  .back-btn { bottom:1.2rem; right:1.2rem; }
+  /* Navbar */
+  .pnav-inner { padding: 0.7rem 1rem; }
+  .pnav-brand { font-size: 1rem; }
+  .ptheme-switcher { display: none; } /* hide theme switcher on small screens */
+
+  /* Hero */
+  .p-hero {
+    padding: 5rem 0 2rem;
+    container: inherit;
+  }
+
+  .p-hero .container {
+    padding: 0 1rem;
+  }
+
+  .p-hero .row { flex-direction: column; }
+
+  .p-title { font-size: clamp(1.45rem, 7vw, 2rem); }
+  .p-subtitle { font-size: 0.9rem; }
+
+  /* Links stack vertically */
+  .p-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .link-btn {
+    justify-content: center;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* Tech badges wrapping */
+  #skills-container { gap: 0.4rem; }
+  .skill-badge { font-size: 0.72rem; }
+
+  /* Timeline */
+  .timeline-info { padding: 1rem 1.1rem; }
+  .timeline-info p { font-size: 0.82rem; }
+
+  /* Main body */
+  .p-body { padding: 0 0.85rem 2.5rem; }
+
+  /* Project card */
+  .project-card > .p-card-inner { padding: 1.25rem 0.9rem; }
+
+  /* Bootstrap cols stack */
+  .p-card-inner .row { flex-direction: column; }
+
+  /* Carousel */
+  .carousel-item { height: 230px; }
+
+  /* Tech specs - 2 col */
+  .tech-specs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  .spec-card { padding: 1rem 0.75rem; }
+  .spec-icon { font-size: 1.2rem; }
+  .spec-card h5 { font-size: 0.72rem; }
+  .spec-card p { font-size: 0.82rem; }
+
+  /* Section titles */
+  .section-title { font-size: 1rem; margin: 1.5rem 0 0.75rem; }
+
+  /* Feature highlights */
+  .feature-highlight { padding: 0.85rem 0.9rem; }
+  .feature-highlight h5 { font-size: 0.85rem; }
+  .feature-icon { width: 34px; height: 34px; font-size: 0.9rem; }
+
+  /* Learning items */
+  .learning-item { padding: 0.85rem 0.9rem; }
+  .learning-item h5 { font-size: 0.85rem; }
+
+  /* Target audience */
+  .target-audience li { padding: 0.7rem 0.85rem; font-size: 0.82rem; }
+
+  /* Video */
+  .project-video { margin: 1.25rem 0; }
+
+  /* Footer */
+  .p-footer { padding: 1.75rem 1rem; }
+
+  /* Back to top */
+  .back-btn { bottom: 1.2rem; right: 1.2rem; width: 36px; height: 36px; }
+
+  /* Prevent overflow */
+  * { max-width: 100%; }
+  img { max-width: 100%; height: auto; }
+  .carousel-item img { height: 100%; }
 }
 
+/* Small mobile (≤ 480px) */
 @media (max-width: 480px) {
-  .p-title { font-size:1.5rem; }
-  .carousel-item { height:200px; }
-  .tech-specs { grid-template-columns:1fr 1fr; }
-  .pnav-brand span { display:none; }
+  /* Navbar brand — hide name, show icon only */
+  .pnav-brand span { display: none; }
+  .pnav-back { font-size: 0.75rem; padding: 0.35rem 0.7rem; }
+
+  /* Hero */
+  .p-hero { padding: 4.5rem 0 1.75rem; }
+  .p-title { font-size: clamp(1.3rem, 9vw, 1.75rem); }
+  .p-subtitle { font-size: 0.85rem; }
+  .p-eyebrow { font-size: 0.65rem; padding: 0.28rem 0.7rem; }
+
+  /* Links */
+  .link-btn { font-size: 0.8rem; padding: 0.5rem 0.9rem; max-width: 100%; }
+
+  /* Body */
+  .p-body { padding: 0 0.65rem 2rem; }
+  .project-card > .p-card-inner { padding: 1rem 0.75rem; }
+
+  /* Carousel */
+  .carousel-item { height: 195px; }
+
+  /* Specs 2 col still */
+  .tech-specs { gap: 0.55rem; }
+  .spec-card { padding: 0.85rem 0.6rem; }
+  .spec-icon { font-size: 1.1rem; margin-bottom: 0.35rem; }
+  .spec-card h5 { font-size: 0.68rem; }
+  .spec-card p { font-size: 0.78rem; }
+
+  /* Progress */
+  .progress-label { font-size: 0.75rem; }
+
+  /* Footer */
+  .p-footer p { font-size: 0.75rem; }
 }

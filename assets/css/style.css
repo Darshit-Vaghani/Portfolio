@@ -1268,15 +1268,19 @@ footer {
 }
 
 /* ============================================================
-   NAVBAR MOBILE COLLAPSE
+   RESPONSIVE — ALL BREAKPOINTS (Single clean source)
    ============================================================ */
+
+/* ── Navbar collapse (< 992px) ─────────────────────────────── */
 @media (max-width: 991px) {
   .navbar-collapse {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
     padding: 1rem;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
+    max-height: 80vh;
+    overflow-y: auto;
   }
 
   [data-theme="light"] .navbar-collapse {
@@ -1284,13 +1288,13 @@ footer {
   }
 
   .navbar-nav {
-    gap: 0.25rem;
+    gap: 0.15rem;
   }
 
   .nav-link {
-    padding: 0.6rem 0.75rem !important;
+    padding: 0.55rem 0.75rem !important;
+    font-size: 0.88rem;
     border-radius: var(--radius-sm);
-    font-size: 0.9rem;
   }
 
   .theme-switcher {
@@ -1316,27 +1320,22 @@ footer {
   .navbar-toggler {
     background: var(--bg-elevated);
     padding: 0.45rem 0.65rem;
+    border: 1px solid var(--border);
   }
 
   .navbar-toggler i {
     color: var(--text-subtle);
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
 
-/* ============================================================
-   RESPONSIVE — TABLET (≤ 992px)
-   ============================================================ */
+/* ── Tablet (≤ 992px) ──────────────────────────────────────── */
 @media (max-width: 992px) {
-  section { padding: 4.5rem 0; }
+  section { padding: 4rem 0; }
 
   .hero {
     padding-top: 90px;
     padding-bottom: 3rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(2rem, 7vw, 3rem);
   }
 
   .stats-grid {
@@ -1349,204 +1348,93 @@ footer {
   }
 }
 
-/* ============================================================
-   RESPONSIVE — MOBILE (≤ 768px)
-   ============================================================ */
+/* ── Mobile (≤ 768px) ──────────────────────────────────────── */
 @media (max-width: 768px) {
+  /* Base */
   section { padding: 3.5rem 0; }
+  .container { padding-left: 1.1rem; padding-right: 1.1rem; }
 
-  /* Hero */
+  /* Section header */
+  .section-header { margin-bottom: 2.25rem; }
+  .section-header h2 { font-size: clamp(1.5rem, 7vw, 2rem); }
+  .section-header p { font-size: 0.88rem; }
+
+  /* Hero — centered column */
   .hero {
-    padding-top: 85px;
-    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 3rem;
     min-height: auto;
-    padding-bottom: 3.5rem;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
   }
 
   .hero-eyebrow {
+    align-self: center;
     font-size: 0.72rem;
-    padding: 0.35rem 0.85rem;
-    justify-content: center;
-    display: inline-flex;
+    padding: 0.32rem 0.85rem;
   }
 
   .hero h1 {
-    font-size: clamp(1.9rem, 9vw, 2.8rem);
+    font-size: clamp(1.85rem, 9vw, 2.6rem);
     letter-spacing: -0.03em;
+    text-align: center;
   }
 
   .hero .typewriter {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+    text-align: center;
   }
 
   .hero p {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
   }
 
+  /* Hero buttons — stack vertically and center */
   .hero-buttons {
-    justify-content: center;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
+    width: 100%;
+    gap: 0.7rem;
   }
 
   .hero-buttons .btn-primary,
   .hero-buttons .btn-outline-light,
   .hero-buttons .btn-resume {
     width: 100%;
-    max-width: 280px;
+    max-width: 300px;
     justify-content: center;
     text-align: center;
   }
 
   /* Stats */
+  .stats { padding: 2.5rem 0; }
+
   .stats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .stat-box {
     border-right: none;
     border-bottom: 1px solid var(--border);
-    padding: 1.5rem 1.25rem;
-  }
-
-  .stat-box:last-child {
-    border-bottom: none;
-  }
-
-  .stat-number {
-    font-size: 2.2rem;
-  }
-
-  /* Section header */
-  .section-header {
-    margin-bottom: 2.5rem;
-  }
-
-  .section-header h2 {
-    font-size: clamp(1.5rem, 7vw, 2rem);
-  }
-
-  .section-header p {
-    font-size: 0.9rem;
-  }
-
-  /* Project carousel */
-  .project-carousel {
-    padding: 0 36px;
-  }
-
-  .carousel-button {
-    width: 32px;
-    height: 32px;
-    font-size: 0.7rem;
-  }
-
-  /* Skills */
-  .skills .row > [class*="col-"] {
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
-  }
-
-  /* Achievement cards */
-  .achievement-card {
-    padding: 1.5rem 1.25rem;
-  }
-
-  /* Position boxes */
-  .position-box {
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 1rem 1.1rem;
-    gap: 1rem;
-  }
-
-  .position-img {
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
-  }
-
-  .position-info h4 {
-    font-size: 0.88rem;
-  }
-
-  .position-info p {
-    font-size: 0.78rem;
-  }
-
-  /* Contact */
-  .contact-form {
-    padding: 1.75rem 1.25rem;
-  }
-
-  .contact-info {
-    padding-left: 0;
-    margin-top: 1.5rem;
-  }
-
-  .contact-item {
-    padding: 0.9rem 1rem;
-  }
-
-  /* Footer */
-  .social-links {
-    gap: 0.6rem;
-  }
-
-  .social-link {
-    width: 38px;
-    height: 38px;
-    font-size: 0.88rem;
-  }
-
-  /* Back to top */
-  .back-to-top {
-    bottom: 1.25rem;
-    right: 1.25rem;
-    width: 38px;
-    height: 38px;
-  }
-}
-
-/* ============================================================
-   RESPONSIVE — SMALL MOBILE (≤ 576px)
-   ============================================================ */
-@media (max-width: 576px) {
-  section { padding: 3rem 0; }
-
-  /* Hero */
-  .hero {
-    padding-top: 80px;
-    padding-bottom: 3rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(1.7rem, 10vw, 2.2rem);
-  }
-
-  .hero .typewriter {
-    font-size: 0.82rem;
-  }
-
-  .hero p {
-    font-size: 0.88rem;
-  }
-
-  /* Navbar brand smaller */
-  .navbar-brand {
-    font-size: 1.05rem;
-  }
-
-  /* Stats side-by-side on very small */
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
+    padding: 1.4rem 1rem;
   }
 
   .stat-box:nth-child(odd) {
     border-right: 1px solid var(--border);
+  }
+
+  .stat-box:last-child {
+    border-bottom: none;
   }
 
   .stat-box:last-child:nth-child(odd) {
@@ -1554,180 +1442,100 @@ footer {
     border-right: none;
   }
 
-  .stat-number {
-    font-size: 2rem;
-  }
+  .stat-number { font-size: 2rem; }
+  .stat-label { font-size: 0.78rem; }
 
-  /* Skills: 2 columns on very small */
+  /* Project carousel */
+  .project-carousel { padding: 0 36px; }
+  .project-slide { min-width: 100%; }
+  .carousel-button { width: 30px; height: 30px; font-size: 0.7rem; }
+
+  /* Project card */
+  .project-img { height: 170px; }
+  .project-content { padding: 1.1rem; }
+  .project-content h4 { font-size: 0.88rem; }
+
+  /* Skills — 3 col on tablet/mobile */
   .skills .row > [class*="col-"] {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
   }
 
   .skill-item {
-    padding: 1.2rem 0.75rem;
+    padding: 1.2rem 0.6rem;
   }
 
-  .skill-icon {
-    font-size: 1.5rem;
-  }
+  .skill-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+  .skill-name { font-size: 0.72rem; }
 
-  .skill-name {
-    font-size: 0.72rem;
-  }
+  /* Achievements */
+  .achievement-card { padding: 1.5rem 1.1rem; }
+  .achievement-icon { width: 42px; height: 42px; font-size: 1.1rem; }
+  .achievement-title { font-size: 0.92rem; }
+  .achievement-desc { font-size: 0.82rem; }
+  .achievement-badge { font-size: 0.68rem; }
 
-  /* Project carousel */
-  .project-carousel {
-    padding: 0 30px;
-  }
-
-  .project-content h4 {
-    font-size: 0.88rem;
-  }
-
-  /* Achievement cards */
-  .achievement-card {
-    padding: 1.25rem 1rem;
-  }
-
-  .achievement-icon {
-    width: 42px;
-    height: 42px;
-    font-size: 1.1rem;
-  }
-
-  /* Section headers */
-  .section-header h2 {
-    font-size: clamp(1.4rem, 8vw, 1.8rem);
-  }
-
-  /* Contact form */
-  .contact-form {
-    padding: 1.5rem 1rem;
-  }
-
-  /* Video */
-  .video-container {
-    border-radius: var(--radius-md);
-  }
-
-  /* Media cards full width */
-  .media-card, .article-card {
-    margin-bottom: 0;
-  }
-
-  /* Position box */
+  /* Positions */
   .position-box {
-    padding: 0.9rem;
-  }
-}
-
-/* ============================================================
-   NAVBAR SCROLLED
-   ============================================================ */
-header.scrolled {
-  background: rgba(10, 14, 23, 0.95);
-  box-shadow: 0 1px 0 var(--border);
-}
-
-[data-theme="light"] header.scrolled {
-  background: rgba(248, 250, 252, 0.97);
-}
-
-/* ============================================================
-   MISC UTILITY
-   ============================================================ */
-.text-accent { color: var(--accent); }
-.monospace {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85em;
-}
-
-/* View All Button row */
-.view-all-row {
-  display: flex;
-  justify-content: center;
-  margin-top: 2.5rem;
-}
-
-/* Divider line */
-.section-divider {
-  height: 1px;
-  background: var(--border);
-  margin: 0;
-}
-
-/* ============================================================
-   MOBILE POLISH — FINAL OVERRIDES
-   ============================================================ */
-
-/* Ensure hero eyebrow is centered block on mobile */
-@media (max-width: 768px) {
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 0.9rem 1rem;
+    gap: 0.85rem;
   }
 
-  .hero-eyebrow {
-    align-self: center;
-  }
+  .position-img { width: 44px; height: 44px; }
+  .position-info h4 { font-size: 0.85rem; }
+  .position-info p { font-size: 0.78rem; }
 
-  .hero h1,
-  .hero .typewriter,
-  .hero p {
-    text-align: center;
-    width: 100%;
-  }
+  /* Contact */
+  .contact-form { padding: 1.5rem 1.1rem; border-radius: var(--radius-md); }
 
-  /* Prevent carousel from creating horizontal scroll */
-  .projects .container {
-    overflow: hidden;
-  }
-
-  /* Skills: Bootstrap col override for mobile */
-  .skills .col-lg-3,
-  .skills .col-md-4,
-  .skills .col-sm-6 {
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
-  }
-
-  /* Make contact form row stack properly */
-  .contact-form .row .col-md-6 {
+  /* Stack the Name + Email fields vertically */
+  .contact-form .row > .col-md-6 {
     flex: 0 0 100%;
     max-width: 100%;
   }
 
-  /* Reduce section padding for mobile */
-  .stats { padding: 2.5rem 0; }
+  .contact-info { padding-left: 0; margin-top: 1.5rem; }
+  .contact-item { padding: 0.85rem 1rem; }
+  .contact-icon { width: 36px; height: 36px; font-size: 0.82rem; }
 
-  /* Position badge label styling */
-  .achievement-badge {
-    font-size: 0.68rem;
-    padding: 0.2rem 0.55rem;
-  }
+  /* Media / Article cards */
+  .article-img,
+  .media-img { height: 170px; }
 
-  /* Ensure all images are contained */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+  /* Footer */
+  .social-links { gap: 0.55rem; }
+  .social-link { width: 38px; height: 38px; font-size: 0.88rem; }
+
+  /* Back to top */
+  .back-to-top { bottom: 1.2rem; right: 1.2rem; width: 38px; height: 38px; }
+
+  /* Prevent horizontal overflow */
+  .project-track,
+  .project-carousel,
+  .navbar-collapse,
+  .hero-content { max-width: 100%; }
+  img { max-width: 100%; height: auto; }
+  .project-img img,
+  .article-img img,
+  .media-img img { height: 100%; }
 }
 
+/* ── Small mobile (≤ 480px) ────────────────────────────────── */
 @media (max-width: 480px) {
-  /* Very small phones */
-  .hero h1 {
-    font-size: 1.75rem;
-  }
+  section { padding: 2.75rem 0; }
+  .container { padding-left: 0.9rem; padding-right: 0.9rem; }
 
-  .hero .typewriter {
-    font-size: 0.78rem;
-  }
+  /* Navbar */
+  .navbar-brand { font-size: 1rem; }
+  .navbar { padding: 0.65rem 0; }
 
-  .hero p {
-    font-size: 0.85rem;
-  }
+  /* Hero */
+  .hero { padding-top: 72px; padding-bottom: 2.5rem; }
+  .hero h1 { font-size: clamp(1.65rem, 10vw, 2rem); letter-spacing: -0.025em; }
+  .hero .typewriter { font-size: 0.8rem; }
+  .hero p { font-size: 0.85rem; }
 
   .hero-buttons .btn-primary,
   .hero-buttons .btn-outline-light,
@@ -1737,119 +1545,70 @@ header.scrolled {
     padding: 0.65rem 1.2rem;
   }
 
-  /* Skills: 2 columns on very small phones */
-  .skills .col-lg-3,
-  .skills .col-md-4,
-  .skills .col-sm-6 {
+  /* Stats */
+  .stat-number { font-size: 1.8rem; }
+  .stat-label { font-size: 0.72rem; }
+  .stat-box { padding: 1.1rem 0.75rem; }
+
+  /* Section header */
+  .section-header h2 { font-size: clamp(1.35rem, 8vw, 1.75rem); }
+  .section-label { font-size: 0.68rem; }
+
+  /* Project carousel */
+  .project-carousel { padding: 0 28px; }
+  .project-img { height: 155px; }
+  .project-tag { font-size: 0.65rem; padding: 0.15rem 0.45rem; }
+
+  /* Skills — 2 cols on very small phones */
+  .skills .row > [class*="col-"] {
     flex: 0 0 50%;
     max-width: 50%;
   }
 
-  .skill-item {
-    padding: 1rem 0.5rem;
-  }
-
-  .skill-icon {
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .skill-name {
-    font-size: 0.68rem;
-  }
-
-  /* Stats: 2-col on very small */
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .stat-box {
-    padding: 1.25rem 0.75rem;
-  }
-
-  .stat-number {
-    font-size: 1.8rem;
-  }
-
-  .stat-label {
-    font-size: 0.72rem;
-  }
-
-  /* Project cards */
-  .project-carousel {
-    padding: 0 28px;
-  }
-
-  .project-content {
-    padding: 1.1rem;
-  }
-
-  .project-content h4 {
-    font-size: 0.85rem;
-  }
-
-  .project-tag {
-    font-size: 0.65rem;
-    padding: 0.15rem 0.45rem;
-  }
-
-  /* Article cards */
-  .article-img,
-  .media-img {
-    height: 160px;
-  }
+  .skill-item { padding: 1rem 0.5rem; }
+  .skill-icon { font-size: 1.4rem; }
+  .skill-name { font-size: 0.68rem; }
 
   /* Achievement cards */
-  .achievement-card {
-    padding: 1.1rem 0.9rem;
-  }
+  .achievement-card { padding: 1.1rem 0.85rem; }
 
   /* Contact */
-  .contact-form {
-    padding: 1.25rem 0.9rem;
-    border-radius: var(--radius-md);
-  }
+  .contact-form { padding: 1.1rem 0.85rem; }
+  .contact-item { padding: 0.75rem 0.85rem; gap: 0.7rem; }
+  .contact-icon { width: 32px; height: 32px; font-size: 0.78rem; }
 
-  .contact-item {
-    padding: 0.75rem 0.85rem;
-    gap: 0.75rem;
-  }
-
-  .contact-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 0.8rem;
-  }
-
-  /* Navbar */
-  .navbar-brand {
-    font-size: 1rem;
-  }
-
-  .navbar-collapse {
-    padding: 0.75rem;
-  }
-
-  /* Section header on tiny screens */
-  .section-header h2 {
-    font-size: 1.5rem;
-  }
-
-  .section-label {
-    font-size: 0.68rem;
-  }
+  /* Article / media */
+  .article-img, .media-img { height: 150px; }
 
   /* Footer */
-  .social-link {
-    width: 36px;
-    height: 36px;
-  }
+  .social-link { width: 36px; height: 36px; }
 
-  .back-to-top {
-    width: 34px;
-    height: 34px;
-    bottom: 1rem;
-    right: 1rem;
-    font-size: 0.75rem;
-  }
+  /* Back to top */
+  .back-to-top { bottom: 1rem; right: 1rem; width: 34px; height: 34px; font-size: 0.75rem; }
+}
+
+/* ── Misc utilities ─────────────────────────────────────────── */
+.text-accent { color: var(--accent); }
+.monospace { font-family: 'JetBrains Mono', monospace; font-size: 0.85em; }
+
+.view-all-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.section-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+/* Scrolled header */
+header.scrolled {
+  background: rgba(10, 14, 23, 0.97);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+[data-theme="light"] header.scrolled {
+  background: rgba(248, 250, 252, 0.98);
 }
