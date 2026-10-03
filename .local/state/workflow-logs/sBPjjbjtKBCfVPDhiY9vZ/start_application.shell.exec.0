@@ -1,0 +1,27 @@
+[41m[1m ERROR [22m[49m Cannot copy server address to clipboard: Couldn't find the `xsel` binary and fallback didn't work. On Debian/Ubuntu you can install xsel with: sudo apt install xsel.
+[32m[39m
+[32m   ┌───────────────────────────────────────────┐[39m
+   [32m│[39m                                           [32m│[39m
+   [32m│[39m   [32mServing![39m                                [32m│[39m
+   [32m│[39m                                           [32m│[39m
+   [32m│[39m   [1m- Local:[22m    http://0.0.0.0:5000         [32m│[39m
+   [32m│[39m   [1m- Network:[22m  http://172.31.93.194:5000   [32m│[39m
+   [32m│[39m                                           [32m│[39m
+[32m   └───────────────────────────────────────────┘[39m
+[32m[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:16:36 AM[22m [33m127.0.0.1[39m [36mGET /[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:16:36 AM[22m [33m127.0.0.1[39m [32mReturned 304 in 19 ms[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:16:36 AM[22m [33m127.0.0.1[39m [36mGET /assets/css/style.css[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:16:36 AM[22m [33m127.0.0.1[39m [32mReturned 304 in 3 ms[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:16:36 AM[22m [33m127.0.0.1[39m [36mGET /script.js[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:16:36 AM[22m [33m127.0.0.1[39m [32mReturned 304 in 2 ms[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:19:32 AM[22m [33m127.0.0.1[39m [36mGET /[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:19:32 AM[22m [33m127.0.0.1[39m [32mReturned 200 in 2 ms[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:19:37 AM[22m [33m127.0.0.1[39m [36mGET /assets/css/style.css[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:19:37 AM[22m [33m127.0.0.1[39m [32mReturned 200 in 2 ms[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:19:37 AM[22m [33m127.0.0.1[39m [36mGET /script.js[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:19:37 AM[22m [33m127.0.0.1[39m [32mReturned 200 in 1 ms[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:19:39 AM[22m [33m127.0.0.1[39m [36mGET /favicon.ico[39m
+[44m[1m HTTP [22m[49m [2m5/17/2026 7:19:39 AM[22m [33m127.0.0.1[39m [31mReturned 404 in 2 ms[39m
+
+[45m[1m INFO [22m[49m Gracefully shutting down. Please wait...
